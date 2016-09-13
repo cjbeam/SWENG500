@@ -2,47 +2,49 @@
 using System.Windows.Forms;
 using ToneReader;
 using Outlook = Microsoft.Office.Interop.Outlook;
+
 namespace ToneAnalyzer
 {
-    public partial class ThisAddIn
+    public partial class ToneAnalyzerAddIn
     {
         private readonly AnalysisProvider _toneReader = new AnalysisProvider()
         {
-                ServiceAddress = Configuration.Service.Address,
-                ServiceVersion = Configuration.Service.Version,
-                ContentType = Configuration.Service.ContentType,
-                UserName = Configuration.Service.UserName,
-                Password = Configuration.Service.Password
+            ServiceAddress = Configuration.Service.Address,
+            ServiceVersion = Configuration.Service.Version,
+            ContentType = Configuration.Service.ContentType,
+            UserName = Configuration.Service.UserName,
+            Password = Configuration.Service.Password
         };
 
         public Outlook.Inspectors Inspectors { get; private set; }
         Outlook.NameSpace _outlookNameSpace;
         private Outlook.MAPIFolder _inbox;
         Outlook.Items _items;
+
         private void ThisAddIn_Startup(object sender, EventArgs e)
         {
             Inspectors = Application.Inspectors;
             _outlookNameSpace = Application.GetNamespace("MAPI");
             _inbox = _outlookNameSpace.GetDefaultFolder(
-                    Outlook.
+                Outlook.
                     OlDefaultFolders.olFolderInbox);
 
             _items = _inbox.Items;
             _items.ItemAdd += items_ItemAdd;
             Application.ItemSend += application_itemSend;
-           
+
         }
 
         private void application_itemSend(object item, ref bool cancel)
         {
             PerformMessageAnalysis(item);
-            Outlook.MailItem mail = (Outlook.MailItem)item;
+            Outlook.MailItem mail = (Outlook.MailItem) item;
             foreach (var potentialFail in Configuration.MailCatergory.StopMessageCategories)
                 if (mail.Categories.Contains(potentialFail))
                 {
                     var dialogResult =
                         MessageBox.Show(
-                           @"This is flagged because of its " + potentialFail + @" score.  Would you like to continue?",
+                            @"This is flagged because of its " + potentialFail + @" score.  Would you like to continue?",
                             @"Are You Sure You Want to Send This?", MessageBoxButtons.YesNo);
                     if (dialogResult == DialogResult.Yes)
                     {
@@ -60,14 +62,19 @@ namespace ToneAnalyzer
 
 
         }
+
         private void items_ItemAdd(object item)
         {
             PerformMessageAnalysis(item);
 
         }
 
-       private void  PerformMessageAnalysis(object item)
+        private void PerformMessageAnalysis(object item)
         {
+            try
+            {
+
+
             Outlook.MailItem mail = (Outlook.MailItem)item;
             if (item != null)
             {
@@ -93,8 +100,14 @@ namespace ToneAnalyzer
                 }
             }
             mail.Save();
+            }
+            catch (Exception)
+            {
+                { }
+                throw;
+            }
         }
-
+        
         private void AddACategory(string categoryTitle, Outlook.OlCategoryColor color)
         {
             var categories =
@@ -104,7 +117,7 @@ namespace ToneAnalyzer
                 categories.Add(categoryTitle,color);
             }
         }
-
+        
         private bool CategoryExists(string categoryName)
         {
             try
