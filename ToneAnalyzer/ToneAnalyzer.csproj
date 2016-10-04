@@ -214,7 +214,7 @@
     <ManifestKeyFile>ToneAnalyzer_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>68D8E6351D9BCF39B2186939510A80733CC22134</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>4DA8FC35C9C3AF594FFCBDF9D9A909F0B8060FF1</ManifestCertificateThumbprint>
   </PropertyGroup>
   <!-- Include the build rules for a C# project. -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
