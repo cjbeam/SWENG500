@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace ToneReader
+namespace ToneAnalyzer
 {
     public struct EmailAnalysis
     {

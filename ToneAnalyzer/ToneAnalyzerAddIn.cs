@@ -1,25 +1,20 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Windows.Forms;
-using ToneReader;
+using Microsoft.Office.Core;
+using Newtonsoft.Json;
 using Outlook = Microsoft.Office.Interop.Outlook;
 
 namespace ToneAnalyzer
 {
     public partial class ToneAnalyzerAddIn
     {
-        private readonly AnalysisProvider _toneReader = new AnalysisProvider()
-        {
-            ServiceAddress = Configuration.Service.Address,
-            ServiceVersion = Configuration.Service.Version,
-            ContentType = Configuration.Service.ContentType,
-            UserName = Configuration.Service.UserName,
-            Password = Configuration.Service.Password
-        };
-
         public Outlook.Inspectors Inspectors { get; private set; }
         Outlook.NameSpace _outlookNameSpace;
         private Outlook.MAPIFolder _inbox;
-        Outlook.Items _items;
+        private Outlook.Items _items;
 
         private void ThisAddIn_Startup(object sender, EventArgs e)
         {
@@ -33,12 +28,14 @@ namespace ToneAnalyzer
             _items.ItemAdd += items_ItemAdd;
             Application.ItemSend += application_itemSend;
 
+
+
         }
 
         private void application_itemSend(object item, ref bool cancel)
         {
             PerformMessageAnalysis(item);
-            Outlook.MailItem mail = (Outlook.MailItem) item;
+            var mail = (Outlook.MailItem) item;
             foreach (var potentialFail in Configuration.MailCatergory.StopMessageCategories)
                 if (mail.Categories.Contains(potentialFail))
                 {
@@ -78,15 +75,16 @@ namespace ToneAnalyzer
             Outlook.MailItem mail = (Outlook.MailItem)item;
             if (item != null)
             {
-                if (mail.MessageClass == "IPM.Note")
-                {
-                    _toneReader.Analyze(mail.Body);
-
+                RemoteTonalService.TonalAnalysisServiceClient service = new RemoteTonalService.TonalAnalysisServiceClient();
+          if (mail.MessageClass == "IPM.Note")
+          {
+              string json = service.GetAnalysis(_outlookNameSpace.CurrentUser.Address, mail.Body);
+              EmailAnalysis emailAnalysis = JsonConvert.DeserializeObject<EmailAnalysis>(json);
                     Outlook.UserProperty serializedAnalysisProperty =
                      mail.UserProperties.Add("Serialized Analysis", Outlook.OlUserPropertyType.olText);
-                    string serializedAnalysis = Serialization.Serialize(_toneReader.EmailAnalysis);
+                    string serializedAnalysis =  Serialize(emailAnalysis);
                     serializedAnalysisProperty.Value = serializedAnalysis;
-                    foreach (var toneScore in _toneReader.DocumentLevelCategoryScores(Configuration.Tone.IncludedCategories))
+                    foreach (var toneScore in  DocumentLevelCategoryScores(emailAnalysis, Configuration.Tone.IncludedCategories))
                     {
                         var mailUserProperty = mail.UserProperties.Add(toneScore.Key, Outlook.OlUserPropertyType.olNumber);
                         mailUserProperty.Value = toneScore.Value;
@@ -107,7 +105,19 @@ namespace ToneAnalyzer
                 throw;
             }
         }
-        
+        private static Dictionary<string, double> DocumentLevelCategoryScores(EmailAnalysis emailAnalysis, List<string> includedCategories)
+        {
+            var categoryTones = new List<EmailAnalysis.Tone>();
+            foreach (var tc in emailAnalysis.BodyResult.CategoryAnalyses)
+            {
+                if (includedCategories.Contains(tc.CategoryId))
+                {
+                    categoryTones.AddRange(tc.Tones);
+                }
+            }
+            var categoryScores = categoryTones.ToDictionary(tone => tone.ToneName, tone => tone.Score);
+            return categoryScores;
+        }
         private void AddACategory(string categoryTitle, Outlook.OlCategoryColor color)
         {
             var categories =
@@ -145,7 +155,15 @@ namespace ToneAnalyzer
             Startup += ThisAddIn_Startup;
             Shutdown += ThisAddIn_Shutdown;
         }
-        
+        private static string Serialize(EmailAnalysis analysis)
+        {
+            var serializer = new System.Xml.Serialization.XmlSerializer(typeof(EmailAnalysis));
+            using (var serialized = new StringWriter())
+            {
+                serializer.Serialize(serialized, analysis);
+                return serialized.ToString();
+            }
+        }
         #endregion
     }
 }
