@@ -84,7 +84,7 @@ namespace ToneAnalyzer
                      mail.UserProperties.Add("Serialized Analysis", Outlook.OlUserPropertyType.olText);
                     string serializedAnalysis =  Serialize(emailAnalysis);
                     serializedAnalysisProperty.Value = serializedAnalysis;
-                    foreach (var toneScore in  DocumentLevelCategoryScores(emailAnalysis, Configuration.Tone.IncludedCategories))
+                    foreach (var toneScore in  Helper.DocumentLevelCategoryScores(emailAnalysis, Configuration.Tone.IncludedCategories))
                     {
                         var mailUserProperty = mail.UserProperties.Add(toneScore.Key, Outlook.OlUserPropertyType.olNumber);
                         mailUserProperty.Value = toneScore.Value;
@@ -105,19 +105,7 @@ namespace ToneAnalyzer
                 throw;
             }
         }
-        private static Dictionary<string, double> DocumentLevelCategoryScores(EmailAnalysis emailAnalysis, List<string> includedCategories)
-        {
-            var categoryTones = new List<EmailAnalysis.Tone>();
-            foreach (var tc in emailAnalysis.BodyResult.CategoryAnalyses)
-            {
-                if (includedCategories.Contains(tc.CategoryId))
-                {
-                    categoryTones.AddRange(tc.Tones);
-                }
-            }
-            var categoryScores = categoryTones.ToDictionary(tone => tone.ToneName, tone => tone.Score);
-            return categoryScores;
-        }
+
         private void AddACategory(string categoryTitle, Outlook.OlCategoryColor color)
         {
             var categories =
