@@ -30,13 +30,17 @@ namespace ToneAnalyzer
 
 
 
-        }
 
+        }
+        private void application_contextMenu()
+        {
+            MessageBox.Show("FUCK!");
+        }
         private void application_itemSend(object item, ref bool cancel)
         {
             PerformMessageAnalysis(item);
             var mail = (Outlook.MailItem) item;
-            foreach (var potentialFail in Configuration.MailCatergory.StopMessageCategories)
+            foreach (var potentialFail in Configuration.MailCatergory.StopMessageCategories())
                 if (mail.Categories.Contains(potentialFail))
                 {
                     var dialogResult =
@@ -86,9 +90,11 @@ namespace ToneAnalyzer
                     serializedAnalysisProperty.Value = serializedAnalysis;
                     foreach (var toneScore in  Helper.DocumentLevelCategoryScores(emailAnalysis, Configuration.Tone.IncludedCategories))
                     {
+
                         var mailUserProperty = mail.UserProperties.Add(toneScore.Key, Outlook.OlUserPropertyType.olNumber);
                         mailUserProperty.Value = toneScore.Value;
-                        if (!(toneScore.Value >= Configuration.MailCatergory.Threshold)) continue;
+                        if (!Configuration.MailCatergory.IncludeCategories().Contains(toneScore.Key)) continue;
+                            if (!(toneScore.Value >= Configuration.MailCatergory.Threshold(toneScore.Key))) continue;
                         var customCat = toneScore.Key;
                         if (mail.Categories == null)
                             mail.Categories = customCat;

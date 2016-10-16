@@ -103,7 +103,7 @@ namespace ToneAnalyzer
                                 SentenceGauge sg = new SentenceGauge((float)tone.Score * 100);
                                 Bitmap b = new Bitmap(sg.Width, sg.Height);
                                 sg.DrawToBitmap(b, new Rectangle(0, 0, b.Width, b.Height));
-                               sr.AddSentence(sentence.Text,b);
+                               sr.AddSentence(sentence.SentenceId, sentence.Text,b, (float)tone.Score);
                             }
                         }
                     }

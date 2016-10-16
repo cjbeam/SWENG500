@@ -212,6 +212,12 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ConfigurationRibbon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ConfigurationRibbon.Designer.cs">
+      <DependentUpon>ConfigurationRibbon.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AnalyzeRibbon.resx">
       <DependentUpon>AnalyzeRibbon.cs</DependentUpon>
     </EmbeddedResource>
@@ -235,6 +241,9 @@
     <EmbeddedResource Include="SentenceResults.resx">
       <DependentUpon>SentenceResults.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ConfigurationRibbon.resx">
+      <DependentUpon>ConfigurationRibbon.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="app.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -244,6 +253,7 @@
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="ResultGauge.cs">
       <SubType>UserControl</SubType>
