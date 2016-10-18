@@ -86,12 +86,18 @@
             this.comboBoxCategory = this.Factory.CreateRibbonComboBox();
             this.group5 = this.Factory.CreateRibbonGroup();
             this.buttonGroup1 = this.Factory.CreateRibbonButtonGroup();
-            this.buttonThresholdUp = this.Factory.CreateRibbonButton();
-            this.buttonThresholdDown = this.Factory.CreateRibbonButton();
             this.group6 = this.Factory.CreateRibbonGroup();
             this.labelThresholdValue = this.Factory.CreateRibbonLabel();
+            this.buttonThresholdUp = this.Factory.CreateRibbonButton();
+            this.buttonThresholdDown = this.Factory.CreateRibbonButton();
             this.button1 = this.Factory.CreateRibbonButton();
             this.button2 = this.Factory.CreateRibbonButton();
+            this.group7 = this.Factory.CreateRibbonGroup();
+            this.buttonHelp = this.Factory.CreateRibbonButton();
+            this.group8 = this.Factory.CreateRibbonGroup();
+            this.button3 = this.Factory.CreateRibbonButton();
+            this.group9 = this.Factory.CreateRibbonGroup();
+            this.button4 = this.Factory.CreateRibbonButton();
             this.tabOutboudMessageAlerts.SuspendLayout();
             this.groupEmotion.SuspendLayout();
             this.groupLanguage.SuspendLayout();
@@ -105,6 +111,9 @@
             this.group5.SuspendLayout();
             this.buttonGroup1.SuspendLayout();
             this.group6.SuspendLayout();
+            this.group7.SuspendLayout();
+            this.group8.SuspendLayout();
+            this.group9.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabOutboudMessageAlerts
@@ -113,6 +122,7 @@
             this.tabOutboudMessageAlerts.Groups.Add(this.groupEmotion);
             this.tabOutboudMessageAlerts.Groups.Add(this.groupLanguage);
             this.tabOutboudMessageAlerts.Groups.Add(this.groupSocialTendencies);
+            this.tabOutboudMessageAlerts.Groups.Add(this.group8);
             this.tabOutboudMessageAlerts.Label = "Tonal Outbound Message Alerts";
             this.tabOutboudMessageAlerts.Name = "tabOutboudMessageAlerts";
             // 
@@ -227,6 +237,7 @@
             this.tabMessageCategories.Groups.Add(this.group1);
             this.tabMessageCategories.Groups.Add(this.group2);
             this.tabMessageCategories.Groups.Add(this.group3);
+            this.tabMessageCategories.Groups.Add(this.group7);
             this.tabMessageCategories.Label = "Tonal Message Categories";
             this.tabMessageCategories.Name = "tabMessageCategories";
             // 
@@ -341,6 +352,7 @@
             this.tabThresholds.Groups.Add(this.group4);
             this.tabThresholds.Groups.Add(this.group5);
             this.tabThresholds.Groups.Add(this.group6);
+            this.tabThresholds.Groups.Add(this.group9);
             this.tabThresholds.Label = "Tonal Category Thresholds";
             this.tabThresholds.Name = "tabThresholds";
             // 
@@ -393,6 +405,16 @@
             this.buttonGroup1.Items.Add(this.buttonThresholdDown);
             this.buttonGroup1.Name = "buttonGroup1";
             // 
+            // group6
+            // 
+            this.group6.Items.Add(this.labelThresholdValue);
+            this.group6.Name = "group6";
+            // 
+            // labelThresholdValue
+            // 
+            this.labelThresholdValue.Label = "0.00";
+            this.labelThresholdValue.Name = "labelThresholdValue";
+            // 
             // buttonThresholdUp
             // 
             this.buttonThresholdUp.Label = "button3";
@@ -411,16 +433,6 @@
             this.buttonThresholdDown.ShowLabel = false;
             this.buttonThresholdDown.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonThresholdDown_Click);
             // 
-            // group6
-            // 
-            this.group6.Items.Add(this.labelThresholdValue);
-            this.group6.Name = "group6";
-            // 
-            // labelThresholdValue
-            // 
-            this.labelThresholdValue.Label = "0.00";
-            this.labelThresholdValue.Name = "labelThresholdValue";
-            // 
             // button1
             // 
             this.button1.Label = "";
@@ -430,6 +442,51 @@
             // 
             this.button2.Label = "";
             this.button2.Name = "button2";
+            // 
+            // group7
+            // 
+            this.group7.Items.Add(this.buttonHelp);
+            this.group7.Label = " ";
+            this.group7.Name = "group7";
+            // 
+            // buttonHelp
+            // 
+            this.buttonHelp.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.buttonHelp.Label = " Help";
+            this.buttonHelp.Name = "buttonHelp";
+            this.buttonHelp.OfficeImageId = "TentativeAcceptInvitation";
+            this.buttonHelp.ShowImage = true;
+            this.buttonHelp.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonHelp_Click);
+            // 
+            // group8
+            // 
+            this.group8.Items.Add(this.button3);
+            this.group8.Label = " ";
+            this.group8.Name = "group8";
+            // 
+            // button3
+            // 
+            this.button3.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.button3.Label = " Help";
+            this.button3.Name = "button3";
+            this.button3.OfficeImageId = "TentativeAcceptInvitation";
+            this.button3.ShowImage = true;
+            this.button3.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button3_Click);
+            // 
+            // group9
+            // 
+            this.group9.Items.Add(this.button4);
+            this.group9.Label = " ";
+            this.group9.Name = "group9";
+            // 
+            // button4
+            // 
+            this.button4.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.button4.Label = " Help";
+            this.button4.Name = "button4";
+            this.button4.OfficeImageId = "TentativeAcceptInvitation";
+            this.button4.ShowImage = true;
+            this.button4.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button4_Click);
             // 
             // ConfigurationRibbon
             // 
@@ -465,6 +522,12 @@
             this.buttonGroup1.PerformLayout();
             this.group6.ResumeLayout(false);
             this.group6.PerformLayout();
+            this.group7.ResumeLayout(false);
+            this.group7.PerformLayout();
+            this.group8.ResumeLayout(false);
+            this.group8.PerformLayout();
+            this.group9.ResumeLayout(false);
+            this.group9.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -516,6 +579,12 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup group6;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonThresholdUp;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonThresholdDown;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGroup group7;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonHelp;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGroup group8;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton button3;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGroup group9;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton button4;
     }
 
     partial class ThisRibbonCollection

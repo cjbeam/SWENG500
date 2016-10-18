@@ -310,5 +310,20 @@ namespace ToneAnalyzer
         {
             DisplayThreshold(comboBoxCategory.Text);
         }
+
+        private void button4_Click(object sender, RibbonControlEventArgs e)
+        {
+            System.Windows.Forms.MessageBox.Show("Set a category from the dropdown box.  Set the minimum score a message should have to be considered part of that category.", "Thresholds");
+        }
+
+        private void buttonHelp_Click(object sender, RibbonControlEventArgs e)
+        {
+            System.Windows.Forms.MessageBox.Show("Select which categories should be applied to incoming/outgoing messages in your inbox.", "Categories");
+        }
+
+        private void button3_Click(object sender, RibbonControlEventArgs e)
+        {
+            System.Windows.Forms.MessageBox.Show("If an outgoing email belongs to one of the checked categories, an alert will fire before the message is sent allowing you to cancel the message.", "Alerts");
+        }
     }
 }
