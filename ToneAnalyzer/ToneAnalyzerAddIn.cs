@@ -34,7 +34,7 @@ namespace ToneAnalyzer
         }
         private void application_contextMenu()
         {
-            MessageBox.Show("FUCK!");
+            MessageBox.Show("");
         }
         private void application_itemSend(object item, ref bool cancel)
         {

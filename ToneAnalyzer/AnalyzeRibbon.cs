@@ -7,7 +7,7 @@ using Microsoft.Office.Tools.Ribbon;
 using System.Windows.Forms;
 using Microsoft.Office.Interop.Outlook;
 using Newtonsoft.Json;
-
+using Outlook = Microsoft.Office.Interop.Outlook;
 namespace ToneAnalyzer
 {
     public partial class AnalyzeRibbon
@@ -15,6 +15,7 @@ namespace ToneAnalyzer
         private EmailAnalysis _emailAnalysis;
         private string _messageHtml;
         private Microsoft.Office.Interop.Outlook.MailItem _currentMailItem;
+  
         private void AnalyzeRibbon_Load(object sender, RibbonUIEventArgs e)
         {
 
@@ -34,11 +35,60 @@ namespace ToneAnalyzer
             resultsGroup.Visible = true;
             var service = new RemoteTonalService.TonalAnalysisServiceClient();
             if (_currentMailItem == null) return;
-            var json = service.GetAnalysis(_currentMailItem.SenderEmailAddress, _currentMailItem.Body);
+            var json = service.GetAnalysis(GetSenderSMTPAddress(_currentMailItem), _currentMailItem.Body);
             _emailAnalysis = JsonConvert.DeserializeObject<EmailAnalysis>(json);
             RenderGauges(_emailAnalysis);
         }
-
+        private string GetSenderSMTPAddress(Outlook.MailItem mail)
+        {
+            string PR_SMTP_ADDRESS =
+                @"http://schemas.microsoft.com/mapi/proptag/0x39FE001E";
+            if (mail == null)
+            {
+                throw new ArgumentNullException();
+            }
+            if (mail.SenderEmailType == "EX")
+            {
+                Outlook.AddressEntry sender =
+                    mail.Sender;
+                if (sender != null)
+                {
+                    //Now we have an AddressEntry representing the Sender
+                    if (sender.AddressEntryUserType ==
+                        Outlook.OlAddressEntryUserType.
+                        olExchangeUserAddressEntry
+                        || sender.AddressEntryUserType ==
+                        Outlook.OlAddressEntryUserType.
+                        olExchangeRemoteUserAddressEntry)
+                    {
+                        //Use the ExchangeUser object PrimarySMTPAddress
+                        Outlook.ExchangeUser exchUser =
+                            sender.GetExchangeUser();
+                        if (exchUser != null)
+                        {
+                            return exchUser.PrimarySmtpAddress;
+                        }
+                        else
+                        {
+                            return null;
+                        }
+                    }
+                    else
+                    {
+                        return sender.PropertyAccessor.GetProperty(
+                            PR_SMTP_ADDRESS) as string;
+                    }
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            else
+            {
+                return mail.SenderEmailAddress;
+            }
+        }
         private void RenderGauges(EmailAnalysis analysis)
         {
             foreach (var result in analysis.BodyResult.CategoryAnalyses)

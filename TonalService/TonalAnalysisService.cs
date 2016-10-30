@@ -28,7 +28,7 @@ namespace TonalService
         public void PersistResults(EmailAnalysis emailAnalysis, string emailAddress)
         {
             int analysisId = 1; //Get unique value from sequence in SQL Server?
-            Debug.WriteLine(String.Format("INSERT INTO ANALYSIS (ANALYSIS_ID, USER_EMAIL, ANALYSIS_DATE) VALUES ({0},{1},GETDATE()",analysisId, emailAddress));
+            Debug.WriteLine(String.Format("INSERT INTO ANALYSIS (ANALYSIS_ID, USER_EMAIL, ANALYSIS_DATE) VALUES ({0},\"{1}\",GETDATE())",analysisId, emailAddress));
             PersistBodyResults(analysisId, emailAnalysis.BodyResult);
             PersistSentenceResults(analysisId, emailAnalysis.SentenceResult);
         }
