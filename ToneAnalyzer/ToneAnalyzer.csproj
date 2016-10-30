@@ -328,6 +328,7 @@
       <DependentUpon>ToneAnalyzerAddIn.Designer.xml</DependentUpon>
     </Compile>
     <AppDesigner Include="Properties\" />
+    <None Include="ToneAnalyzer_1_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -358,10 +359,10 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>OpenSource_Developer_Certificate_KN.p12</ManifestKeyFile>
+    <ManifestKeyFile>ToneAnalyzer_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>5C2F8FD4FCB126D652BD0DA4DC3C9770FF1D9B42</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>EAAFB54099EB1DA84D141DAB5BD6F1DF01121F6B</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>

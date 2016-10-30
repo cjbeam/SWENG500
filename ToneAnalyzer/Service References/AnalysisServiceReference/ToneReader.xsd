@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ToneReader" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ToneReader" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="EmailAnalysis">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BodyResult" type="tns:EmailAnalysis.BodyAnalysis" />
+      <xs:element minOccurs="0" name="SentenceResult" nillable="true" type="tns:ArrayOfEmailAnalysis.SentenceAnalysis" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EmailAnalysis" nillable="true" type="tns:EmailAnalysis" />
+  <xs:complexType name="EmailAnalysis.BodyAnalysis">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CategoryAnalyses" nillable="true" type="tns:ArrayOfEmailAnalysis.CategoryAnalysis" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EmailAnalysis.BodyAnalysis" nillable="true" type="tns:EmailAnalysis.BodyAnalysis" />
+  <xs:complexType name="ArrayOfEmailAnalysis.CategoryAnalysis">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EmailAnalysis.CategoryAnalysis" type="tns:EmailAnalysis.CategoryAnalysis" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEmailAnalysis.CategoryAnalysis" nillable="true" type="tns:ArrayOfEmailAnalysis.CategoryAnalysis" />
+  <xs:complexType name="EmailAnalysis.CategoryAnalysis">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CategoryId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CategoryName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Tones" nillable="true" type="tns:ArrayOfEmailAnalysis.Tone" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EmailAnalysis.CategoryAnalysis" nillable="true" type="tns:EmailAnalysis.CategoryAnalysis" />
+  <xs:complexType name="ArrayOfEmailAnalysis.Tone">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EmailAnalysis.Tone" type="tns:EmailAnalysis.Tone" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEmailAnalysis.Tone" nillable="true" type="tns:ArrayOfEmailAnalysis.Tone" />
+  <xs:complexType name="EmailAnalysis.Tone">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Score" type="xs:double" />
+      <xs:element minOccurs="0" name="ToneId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ToneName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EmailAnalysis.Tone" nillable="true" type="tns:EmailAnalysis.Tone" />
+  <xs:complexType name="ArrayOfEmailAnalysis.SentenceAnalysis">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EmailAnalysis.SentenceAnalysis" type="tns:EmailAnalysis.SentenceAnalysis" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEmailAnalysis.SentenceAnalysis" nillable="true" type="tns:ArrayOfEmailAnalysis.SentenceAnalysis" />
+  <xs:complexType name="EmailAnalysis.SentenceAnalysis">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CategoryAnalyses" nillable="true" type="tns:ArrayOfEmailAnalysis.CategoryAnalysis" />
+      <xs:element minOccurs="0" name="InputFrom" type="xs:int" />
+      <xs:element minOccurs="0" name="InputTo" type="xs:int" />
+      <xs:element minOccurs="0" name="SentenceId" type="xs:int" />
+      <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EmailAnalysis.SentenceAnalysis" nillable="true" type="tns:EmailAnalysis.SentenceAnalysis" />
+</xs:schema>
