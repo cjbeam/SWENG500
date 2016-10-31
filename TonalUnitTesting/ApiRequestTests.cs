@@ -12,6 +12,16 @@ namespace ToneReader.Tests
            string result = ApiRequest.MakeRequest("hi");
            Assert.IsTrue(true);
         }
+
+
+        [TestMethod()]
+        [ExpectedException(typeof(System.Net.WebException),
+    "The remote server returned an error: (401) Unauthorized.")]
+        public void MakeBadPasswordRequestTest()
+        {
+            ServiceConfiguration.Password = "Bad Password";
+            string result = ApiRequest.MakeRequest("hi");
+        }
     }
 
 }

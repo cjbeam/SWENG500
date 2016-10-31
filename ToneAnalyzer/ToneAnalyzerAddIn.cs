@@ -16,7 +16,7 @@ namespace ToneAnalyzer
         private Outlook.MAPIFolder _inbox;
         private Outlook.Items _items;
 
-        private void ThisAddIn_Startup(object sender, EventArgs e)
+        public void ThisAddIn_Startup(object sender, EventArgs e)
         {
             Inspectors = Application.Inspectors;
             _outlookNameSpace = Application.GetNamespace("MAPI");
@@ -34,7 +34,7 @@ namespace ToneAnalyzer
         }
         private void application_contextMenu()
         {
-            MessageBox.Show("FUCK!");
+            MessageBox.Show("");
         }
         private void application_itemSend(object item, ref bool cancel)
         {
@@ -72,11 +72,12 @@ namespace ToneAnalyzer
 
         private void PerformMessageAnalysis(object item)
         {
+            Outlook.MailItem mail = (Outlook.MailItem)item;
             try
             {
 
 
-            Outlook.MailItem mail = (Outlook.MailItem)item;
+
             if (item != null)
             {
                 RemoteTonalService.TonalAnalysisServiceClient service = new RemoteTonalService.TonalAnalysisServiceClient();
@@ -107,8 +108,7 @@ namespace ToneAnalyzer
             }
             catch (Exception)
             {
-                { }
-                throw;
+                mail.Categories = "Unable To Analyze";
             }
         }
 
