@@ -35,9 +35,29 @@ namespace ToneAnalyzer
             resultsGroup.Visible = true;
             var service = new RemoteTonalService.TonalAnalysisServiceClient();
             if (_currentMailItem == null) return;
-            var json = service.GetAnalysis(GetSenderSMTPAddress(_currentMailItem), _currentMailItem.Body);
-            _emailAnalysis = JsonConvert.DeserializeObject<EmailAnalysis>(json);
+            string json="";
+            try
+            {
+
+                json = service.GetAnalysis(GetSenderSMTPAddress(_currentMailItem), _currentMailItem.Body);
+
+                try
+                {
+                    _emailAnalysis = JsonConvert.DeserializeObject<EmailAnalysis>(json);
+                }
+                catch (System.Exception ex)
+                {
+                   MessageBox.Show(json, "Unable to Analyze Message");
+                    resultsGroup.Visible = false;
+                    return;
+                }
+
             RenderGauges(_emailAnalysis);
+            }
+            catch(System.Exception exception)
+            {
+                    MessageBox.Show(exception.Message, "Unable to Analyze Message");
+                }
         }
         private string GetSenderSMTPAddress(Outlook.MailItem mail)
         {

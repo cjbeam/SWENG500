@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.ServiceModel;
-using System.Text;
 using System.Diagnostics;
 using Newtonsoft.Json;
 using ToneReader;
@@ -14,15 +10,26 @@ namespace TonalService
     {
        public string GetAnalysis(string email, string text)
        {
-            var provider = new AnalysisProvider();
-            provider.Analyze(email,text);
-            string jsonResult = provider.EmailAnalysis;
-            PersistAnalysis(email, jsonResult);
+            string jsonResult = "";
+            try
+            {
+                var provider = new AnalysisProvider();
+                provider.Analyze(email, text);
+                jsonResult = provider.EmailAnalysis;
+                EmailAnalysis emailAnalysis = JsonConvert.DeserializeObject<EmailAnalysis>(jsonResult);
+                if (emailAnalysis.SentenceResult == null)
+                    throw new Exception("Body is not large enough to perform analysis.");
+                PersistAnalysis(email, emailAnalysis);
+            }
+            catch (Exception ex)
+            {
+                jsonResult = ex.Message;
+            }
             return jsonResult;
        }
-        public void PersistAnalysis(string email, string json)
+        public void PersistAnalysis(string email, EmailAnalysis emailAnalysis)
         {
-            EmailAnalysis emailAnalysis = JsonConvert.DeserializeObject<EmailAnalysis>(json);
+           
             PersistResults(emailAnalysis, email);
         }
         public void PersistResults(EmailAnalysis emailAnalysis, string emailAddress)
