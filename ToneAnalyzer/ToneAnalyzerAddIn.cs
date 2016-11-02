@@ -1,27 +1,22 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Windows.Forms;
-using ToneReader;
+using Microsoft.Office.Core;
+using Newtonsoft.Json;
 using Outlook = Microsoft.Office.Interop.Outlook;
 
 namespace ToneAnalyzer
 {
     public partial class ToneAnalyzerAddIn
     {
-        private readonly AnalysisProvider _toneReader = new AnalysisProvider()
-        {
-            ServiceAddress = Configuration.Service.Address,
-            ServiceVersion = Configuration.Service.Version,
-            ContentType = Configuration.Service.ContentType,
-            UserName = Configuration.Service.UserName,
-            Password = Configuration.Service.Password
-        };
-
         public Outlook.Inspectors Inspectors { get; private set; }
         Outlook.NameSpace _outlookNameSpace;
         private Outlook.MAPIFolder _inbox;
-        Outlook.Items _items;
+        private Outlook.Items _items;
 
-        private void ThisAddIn_Startup(object sender, EventArgs e)
+        public void ThisAddIn_Startup(object sender, EventArgs e)
         {
             Inspectors = Application.Inspectors;
             _outlookNameSpace = Application.GetNamespace("MAPI");
@@ -33,13 +28,19 @@ namespace ToneAnalyzer
             _items.ItemAdd += items_ItemAdd;
             Application.ItemSend += application_itemSend;
 
-        }
 
+
+
+        }
+        private void application_contextMenu()
+        {
+            MessageBox.Show("");
+        }
         private void application_itemSend(object item, ref bool cancel)
         {
             PerformMessageAnalysis(item);
-            Outlook.MailItem mail = (Outlook.MailItem) item;
-            foreach (var potentialFail in Configuration.MailCatergory.StopMessageCategories)
+            var mail = (Outlook.MailItem) item;
+            foreach (var potentialFail in Configuration.MailCatergory.StopMessageCategories())
                 if (mail.Categories.Contains(potentialFail))
                 {
                     var dialogResult =
@@ -71,26 +72,30 @@ namespace ToneAnalyzer
 
         private void PerformMessageAnalysis(object item)
         {
+            Outlook.MailItem mail = (Outlook.MailItem)item;
             try
             {
 
 
-            Outlook.MailItem mail = (Outlook.MailItem)item;
+
             if (item != null)
             {
-                if (mail.MessageClass == "IPM.Note")
-                {
-                    _toneReader.Analyze(mail.Body);
-
+                RemoteTonalService.TonalAnalysisServiceClient service = new RemoteTonalService.TonalAnalysisServiceClient();
+          if (mail.MessageClass == "IPM.Note")
+          {
+              string json = service.GetAnalysis(_outlookNameSpace.CurrentUser.Address, mail.Body);
+              EmailAnalysis emailAnalysis = JsonConvert.DeserializeObject<EmailAnalysis>(json);
                     Outlook.UserProperty serializedAnalysisProperty =
                      mail.UserProperties.Add("Serialized Analysis", Outlook.OlUserPropertyType.olText);
-                    string serializedAnalysis = Serialization.Serialize(_toneReader.EmailAnalysis);
+                    string serializedAnalysis =  Serialize(emailAnalysis);
                     serializedAnalysisProperty.Value = serializedAnalysis;
-                    foreach (var toneScore in _toneReader.DocumentLevelCategoryScores(Configuration.Tone.IncludedCategories))
+                    foreach (var toneScore in  Helper.DocumentLevelCategoryScores(emailAnalysis, Configuration.Tone.IncludedCategories))
                     {
+
                         var mailUserProperty = mail.UserProperties.Add(toneScore.Key, Outlook.OlUserPropertyType.olNumber);
                         mailUserProperty.Value = toneScore.Value;
-                        if (!(toneScore.Value >= Configuration.MailCatergory.Threshold)) continue;
+                        if (!Configuration.MailCatergory.IncludeCategories().Contains(toneScore.Key)) continue;
+                            if (!(toneScore.Value >= Configuration.MailCatergory.Threshold(toneScore.Key))) continue;
                         var customCat = toneScore.Key;
                         if (mail.Categories == null)
                             mail.Categories = customCat;
@@ -103,11 +108,10 @@ namespace ToneAnalyzer
             }
             catch (Exception)
             {
-                { }
-                throw;
+                mail.Categories = "Unable To Analyze";
             }
         }
-        
+
         private void AddACategory(string categoryTitle, Outlook.OlCategoryColor color)
         {
             var categories =
@@ -145,7 +149,15 @@ namespace ToneAnalyzer
             Startup += ThisAddIn_Startup;
             Shutdown += ThisAddIn_Shutdown;
         }
-        
+        private static string Serialize(EmailAnalysis analysis)
+        {
+            var serializer = new System.Xml.Serialization.XmlSerializer(typeof(EmailAnalysis));
+            using (var serialized = new StringWriter())
+            {
+                serializer.Serialize(serialized, analysis);
+                return serialized.ToString();
+            }
+        }
         #endregion
     }
 }

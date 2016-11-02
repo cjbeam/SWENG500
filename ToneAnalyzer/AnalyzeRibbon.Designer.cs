@@ -35,17 +35,26 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnalyzeRibbon));
+            Microsoft.Office.Tools.Ribbon.RibbonDropDownItem ribbonDropDownItemImpl1 = this.Factory.CreateRibbonDropDownItem();
             this.tab1 = this.Factory.CreateRibbonTab();
             this.groupToneAnalyzer = this.Factory.CreateRibbonGroup();
+            this.resultsGroup = this.Factory.CreateRibbonGroup();
+            this.separator3 = this.Factory.CreateRibbonSeparator();
+            this.separator2 = this.Factory.CreateRibbonSeparator();
             this.buttonAnalyzeMessage = this.Factory.CreateRibbonButton();
+            this.socialResultsgallery = this.Factory.CreateRibbonGallery();
+            this.languageResultsgallery = this.Factory.CreateRibbonGallery();
+            this.emotionResultsGallery = this.Factory.CreateRibbonGallery();
             this.tab1.SuspendLayout();
             this.groupToneAnalyzer.SuspendLayout();
+            this.resultsGroup.SuspendLayout();
             this.SuspendLayout();
             // 
             // tab1
             // 
             this.tab1.ControlId.ControlIdType = Microsoft.Office.Tools.Ribbon.RibbonControlIdType.Office;
             this.tab1.Groups.Add(this.groupToneAnalyzer);
+            this.tab1.Groups.Add(this.resultsGroup);
             this.tab1.Label = "TabAddIns";
             this.tab1.Name = "tab1";
             // 
@@ -55,6 +64,25 @@
             this.groupToneAnalyzer.Label = "Tone Analyzer";
             this.groupToneAnalyzer.Name = "groupToneAnalyzer";
             // 
+            // resultsGroup
+            // 
+            this.resultsGroup.Items.Add(this.socialResultsgallery);
+            this.resultsGroup.Items.Add(this.separator3);
+            this.resultsGroup.Items.Add(this.languageResultsgallery);
+            this.resultsGroup.Items.Add(this.separator2);
+            this.resultsGroup.Items.Add(this.emotionResultsGallery);
+            this.resultsGroup.Label = "Tonal Results";
+            this.resultsGroup.Name = "resultsGroup";
+            this.resultsGroup.Visible = false;
+            // 
+            // separator3
+            // 
+            this.separator3.Name = "separator3";
+            // 
+            // separator2
+            // 
+            this.separator2.Name = "separator2";
+            // 
             // buttonAnalyzeMessage
             // 
             this.buttonAnalyzeMessage.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
@@ -63,6 +91,43 @@
             this.buttonAnalyzeMessage.Name = "buttonAnalyzeMessage";
             this.buttonAnalyzeMessage.ShowImage = true;
             this.buttonAnalyzeMessage.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.AnalyzeTone_Click);
+            // 
+            // socialResultsgallery
+            // 
+            this.socialResultsgallery.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.socialResultsgallery.Image = ((System.Drawing.Image)(resources.GetObject("socialResultsgallery.Image")));
+            this.socialResultsgallery.Label = "Social Tendencies";
+            this.socialResultsgallery.Name = "socialResultsgallery";
+            this.socialResultsgallery.ShowImage = true;
+            this.socialResultsgallery.ShowItemLabel = false;
+            this.socialResultsgallery.Tag = "social_tone";
+            this.socialResultsgallery.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.socialResultsgallery_Click);
+            // 
+            // languageResultsgallery
+            // 
+            this.languageResultsgallery.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.languageResultsgallery.Image = ((System.Drawing.Image)(resources.GetObject("languageResultsgallery.Image")));
+            this.languageResultsgallery.Label = "Language";
+            this.languageResultsgallery.Name = "languageResultsgallery";
+            this.languageResultsgallery.ShowImage = true;
+            this.languageResultsgallery.ShowItemLabel = false;
+            this.languageResultsgallery.Tag = "language_tone";
+            this.languageResultsgallery.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.languageResultsgallery_Click);
+            // 
+            // emotionResultsGallery
+            // 
+            this.emotionResultsGallery.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.emotionResultsGallery.Image = ((System.Drawing.Image)(resources.GetObject("emotionResultsGallery.Image")));
+            ribbonDropDownItemImpl1.Image = ((System.Drawing.Image)(resources.GetObject("ribbonDropDownItemImpl1.Image")));
+            ribbonDropDownItemImpl1.Label = "Item0";
+            this.emotionResultsGallery.Items.Add(ribbonDropDownItemImpl1);
+            this.emotionResultsGallery.Label = "Emotion";
+            this.emotionResultsGallery.Name = "emotionResultsGallery";
+            this.emotionResultsGallery.ShowImage = true;
+            this.emotionResultsGallery.ShowItemLabel = false;
+            this.emotionResultsGallery.Tag = "emotion_tone";
+            this.emotionResultsGallery.ButtonClick += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.emotionResultsGallery_ButtonClick);
+            this.emotionResultsGallery.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.emotionResultsGallery_Click);
             // 
             // AnalyzeRibbon
             // 
@@ -74,6 +139,8 @@
             this.tab1.PerformLayout();
             this.groupToneAnalyzer.ResumeLayout(false);
             this.groupToneAnalyzer.PerformLayout();
+            this.resultsGroup.ResumeLayout(false);
+            this.resultsGroup.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -83,6 +150,12 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonTab tab1;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup groupToneAnalyzer;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonAnalyzeMessage;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGallery emotionResultsGallery;
+        internal Microsoft.Office.Tools.Ribbon.RibbonSeparator separator2;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGallery languageResultsgallery;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGallery socialResultsgallery;
+        internal Microsoft.Office.Tools.Ribbon.RibbonSeparator separator3;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGroup resultsGroup;
     }
 
     partial class ThisRibbonCollection

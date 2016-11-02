@@ -22,5 +22,473 @@ namespace ToneAnalyzer.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool AngerIncluded {
+            get {
+                return ((bool)(this["AngerIncluded"]));
+            }
+            set {
+                this["AngerIncluded"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool DisgustIncluded {
+            get {
+                return ((bool)(this["DisgustIncluded"]));
+            }
+            set {
+                this["DisgustIncluded"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool FearIncluded {
+            get {
+                return ((bool)(this["FearIncluded"]));
+            }
+            set {
+                this["FearIncluded"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool JoyIncluded {
+            get {
+                return ((bool)(this["JoyIncluded"]));
+            }
+            set {
+                this["JoyIncluded"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool SadnessIncluded {
+            get {
+                return ((bool)(this["SadnessIncluded"]));
+            }
+            set {
+                this["SadnessIncluded"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool AnalyticalIncluded {
+            get {
+                return ((bool)(this["AnalyticalIncluded"]));
+            }
+            set {
+                this["AnalyticalIncluded"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ConfidentIncluded {
+            get {
+                return ((bool)(this["ConfidentIncluded"]));
+            }
+            set {
+                this["ConfidentIncluded"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool TentativeIncluded {
+            get {
+                return ((bool)(this["TentativeIncluded"]));
+            }
+            set {
+                this["TentativeIncluded"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool OpennessIncluded {
+            get {
+                return ((bool)(this["OpennessIncluded"]));
+            }
+            set {
+                this["OpennessIncluded"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ConscientiousnessIncluded {
+            get {
+                return ((bool)(this["ConscientiousnessIncluded"]));
+            }
+            set {
+                this["ConscientiousnessIncluded"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ExtraversionIncluded {
+            get {
+                return ((bool)(this["ExtraversionIncluded"]));
+            }
+            set {
+                this["ExtraversionIncluded"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool AgreeablenessIncluded {
+            get {
+                return ((bool)(this["AgreeablenessIncluded"]));
+            }
+            set {
+                this["AgreeablenessIncluded"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool EmotionalRangeIncluded {
+            get {
+                return ((bool)(this["EmotionalRangeIncluded"]));
+            }
+            set {
+                this["EmotionalRangeIncluded"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool AngerAlert {
+            get {
+                return ((bool)(this["AngerAlert"]));
+            }
+            set {
+                this["AngerAlert"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool DisgustAlert {
+            get {
+                return ((bool)(this["DisgustAlert"]));
+            }
+            set {
+                this["DisgustAlert"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool FearAlert {
+            get {
+                return ((bool)(this["FearAlert"]));
+            }
+            set {
+                this["FearAlert"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool JoyAlert {
+            get {
+                return ((bool)(this["JoyAlert"]));
+            }
+            set {
+                this["JoyAlert"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool SadnessAlert {
+            get {
+                return ((bool)(this["SadnessAlert"]));
+            }
+            set {
+                this["SadnessAlert"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool AnalyticalAlert {
+            get {
+                return ((bool)(this["AnalyticalAlert"]));
+            }
+            set {
+                this["AnalyticalAlert"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ConfidentAlert {
+            get {
+                return ((bool)(this["ConfidentAlert"]));
+            }
+            set {
+                this["ConfidentAlert"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool TentativeAlert {
+            get {
+                return ((bool)(this["TentativeAlert"]));
+            }
+            set {
+                this["TentativeAlert"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool OpennessAlert {
+            get {
+                return ((bool)(this["OpennessAlert"]));
+            }
+            set {
+                this["OpennessAlert"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ConscientiousnessAlert {
+            get {
+                return ((bool)(this["ConscientiousnessAlert"]));
+            }
+            set {
+                this["ConscientiousnessAlert"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ExtraversionAlert {
+            get {
+                return ((bool)(this["ExtraversionAlert"]));
+            }
+            set {
+                this["ExtraversionAlert"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool AgreeablenessAlert {
+            get {
+                return ((bool)(this["AgreeablenessAlert"]));
+            }
+            set {
+                this["AgreeablenessAlert"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool EmotionalRangeAlert {
+            get {
+                return ((bool)(this["EmotionalRangeAlert"]));
+            }
+            set {
+                this["EmotionalRangeAlert"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0.6")]
+        public double AngerThreshold {
+            get {
+                return ((double)(this["AngerThreshold"]));
+            }
+            set {
+                this["AngerThreshold"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0.6")]
+        public double DisgustThreshold {
+            get {
+                return ((double)(this["DisgustThreshold"]));
+            }
+            set {
+                this["DisgustThreshold"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0.6")]
+        public double FearThreshold {
+            get {
+                return ((double)(this["FearThreshold"]));
+            }
+            set {
+                this["FearThreshold"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0.6")]
+        public double JoyThreshold {
+            get {
+                return ((double)(this["JoyThreshold"]));
+            }
+            set {
+                this["JoyThreshold"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0.6")]
+        public double SadnessThreshold {
+            get {
+                return ((double)(this["SadnessThreshold"]));
+            }
+            set {
+                this["SadnessThreshold"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0.6")]
+        public double AnalyticalThreshold {
+            get {
+                return ((double)(this["AnalyticalThreshold"]));
+            }
+            set {
+                this["AnalyticalThreshold"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0.6")]
+        public double ConfidentThreshold {
+            get {
+                return ((double)(this["ConfidentThreshold"]));
+            }
+            set {
+                this["ConfidentThreshold"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0.6")]
+        public double TentativeThreshold {
+            get {
+                return ((double)(this["TentativeThreshold"]));
+            }
+            set {
+                this["TentativeThreshold"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0.6")]
+        public double OpennessThreshold {
+            get {
+                return ((double)(this["OpennessThreshold"]));
+            }
+            set {
+                this["OpennessThreshold"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0.6")]
+        public double ConscientiousnessThreshold {
+            get {
+                return ((double)(this["ConscientiousnessThreshold"]));
+            }
+            set {
+                this["ConscientiousnessThreshold"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0.6")]
+        public double ExtraversionThreshold {
+            get {
+                return ((double)(this["ExtraversionThreshold"]));
+            }
+            set {
+                this["ExtraversionThreshold"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0.6")]
+        public double AgreeablenessThreshold {
+            get {
+                return ((double)(this["AgreeablenessThreshold"]));
+            }
+            set {
+                this["AgreeablenessThreshold"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0.6")]
+        public double EmotionalRangeThreshold {
+            get {
+                return ((double)(this["EmotionalRangeThreshold"]));
+            }
+            set {
+                this["EmotionalRangeThreshold"] = value;
+            }
+        }
     }
 }
