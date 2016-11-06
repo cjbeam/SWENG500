@@ -64,6 +64,7 @@
             this.checkBoxExtraversion = this.Factory.CreateRibbonCheckBox();
             this.checkBoxAgreeableness = this.Factory.CreateRibbonCheckBox();
             this.checkBoxEmotionalRange = this.Factory.CreateRibbonCheckBox();
+            this.group8 = this.Factory.CreateRibbonGroup();
             this.tabMessageCategories = this.Factory.CreateRibbonTab();
             this.group1 = this.Factory.CreateRibbonGroup();
             this.checkBoxAngerCategory = this.Factory.CreateRibbonCheckBox();
@@ -81,6 +82,7 @@
             this.checkBoxExtraversionCategory = this.Factory.CreateRibbonCheckBox();
             this.checkBoxAgreeablenessCategory = this.Factory.CreateRibbonCheckBox();
             this.checkBoxERangeCategory = this.Factory.CreateRibbonCheckBox();
+            this.group7 = this.Factory.CreateRibbonGroup();
             this.tabThresholds = this.Factory.CreateRibbonTab();
             this.group4 = this.Factory.CreateRibbonGroup();
             this.comboBoxCategory = this.Factory.CreateRibbonComboBox();
@@ -88,31 +90,30 @@
             this.buttonGroup1 = this.Factory.CreateRibbonButtonGroup();
             this.group6 = this.Factory.CreateRibbonGroup();
             this.labelThresholdValue = this.Factory.CreateRibbonLabel();
+            this.group9 = this.Factory.CreateRibbonGroup();
+            this.buttonHelp = this.Factory.CreateRibbonButton();
+            this.button3 = this.Factory.CreateRibbonButton();
             this.buttonThresholdUp = this.Factory.CreateRibbonButton();
             this.buttonThresholdDown = this.Factory.CreateRibbonButton();
+            this.button4 = this.Factory.CreateRibbonButton();
             this.button1 = this.Factory.CreateRibbonButton();
             this.button2 = this.Factory.CreateRibbonButton();
-            this.group7 = this.Factory.CreateRibbonGroup();
-            this.buttonHelp = this.Factory.CreateRibbonButton();
-            this.group8 = this.Factory.CreateRibbonGroup();
-            this.button3 = this.Factory.CreateRibbonButton();
-            this.group9 = this.Factory.CreateRibbonGroup();
-            this.button4 = this.Factory.CreateRibbonButton();
+            this.buttonTonalDashboard = this.Factory.CreateRibbonButton();
             this.tabOutboudMessageAlerts.SuspendLayout();
             this.groupEmotion.SuspendLayout();
             this.groupLanguage.SuspendLayout();
             this.groupSocialTendencies.SuspendLayout();
+            this.group8.SuspendLayout();
             this.tabMessageCategories.SuspendLayout();
             this.group1.SuspendLayout();
             this.group2.SuspendLayout();
             this.group3.SuspendLayout();
+            this.group7.SuspendLayout();
             this.tabThresholds.SuspendLayout();
             this.group4.SuspendLayout();
             this.group5.SuspendLayout();
             this.buttonGroup1.SuspendLayout();
             this.group6.SuspendLayout();
-            this.group7.SuspendLayout();
-            this.group8.SuspendLayout();
             this.group9.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -232,6 +233,12 @@
             this.checkBoxEmotionalRange.Name = "checkBoxEmotionalRange";
             this.checkBoxEmotionalRange.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.checkBoxEmotionalRange_Click);
             // 
+            // group8
+            // 
+            this.group8.Items.Add(this.button3);
+            this.group8.Label = " ";
+            this.group8.Name = "group8";
+            // 
             // tabMessageCategories
             // 
             this.tabMessageCategories.Groups.Add(this.group1);
@@ -347,6 +354,12 @@
             this.checkBoxERangeCategory.Name = "checkBoxERangeCategory";
             this.checkBoxERangeCategory.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.checkBoxERangeCategory_Click);
             // 
+            // group7
+            // 
+            this.group7.Items.Add(this.buttonHelp);
+            this.group7.Label = " ";
+            this.group7.Name = "group7";
+            // 
             // tabThresholds
             // 
             this.tabThresholds.Groups.Add(this.group4);
@@ -415,6 +428,30 @@
             this.labelThresholdValue.Label = "0.00";
             this.labelThresholdValue.Name = "labelThresholdValue";
             // 
+            // group9
+            // 
+            this.group9.Items.Add(this.button4);
+            this.group9.Label = " ";
+            this.group9.Name = "group9";
+            // 
+            // buttonHelp
+            // 
+            this.buttonHelp.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.buttonHelp.Label = " Help";
+            this.buttonHelp.Name = "buttonHelp";
+            this.buttonHelp.OfficeImageId = "TentativeAcceptInvitation";
+            this.buttonHelp.ShowImage = true;
+            this.buttonHelp.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonHelp_Click);
+            // 
+            // button3
+            // 
+            this.button3.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.button3.Label = " Help";
+            this.button3.Name = "button3";
+            this.button3.OfficeImageId = "TentativeAcceptInvitation";
+            this.button3.ShowImage = true;
+            this.button3.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button3_Click);
+            // 
             // buttonThresholdUp
             // 
             this.buttonThresholdUp.Label = "button3";
@@ -433,6 +470,15 @@
             this.buttonThresholdDown.ShowLabel = false;
             this.buttonThresholdDown.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonThresholdDown_Click);
             // 
+            // button4
+            // 
+            this.button4.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.button4.Label = " Help";
+            this.button4.Name = "button4";
+            this.button4.OfficeImageId = "TentativeAcceptInvitation";
+            this.button4.ShowImage = true;
+            this.button4.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button4_Click);
+            // 
             // button1
             // 
             this.button1.Label = "";
@@ -443,54 +489,21 @@
             this.button2.Label = "";
             this.button2.Name = "button2";
             // 
-            // group7
+            // buttonTonalDashboard
             // 
-            this.group7.Items.Add(this.buttonHelp);
-            this.group7.Label = " ";
-            this.group7.Name = "group7";
-            // 
-            // buttonHelp
-            // 
-            this.buttonHelp.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            this.buttonHelp.Label = " Help";
-            this.buttonHelp.Name = "buttonHelp";
-            this.buttonHelp.OfficeImageId = "TentativeAcceptInvitation";
-            this.buttonHelp.ShowImage = true;
-            this.buttonHelp.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonHelp_Click);
-            // 
-            // group8
-            // 
-            this.group8.Items.Add(this.button3);
-            this.group8.Label = " ";
-            this.group8.Name = "group8";
-            // 
-            // button3
-            // 
-            this.button3.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            this.button3.Label = " Help";
-            this.button3.Name = "button3";
-            this.button3.OfficeImageId = "TentativeAcceptInvitation";
-            this.button3.ShowImage = true;
-            this.button3.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button3_Click);
-            // 
-            // group9
-            // 
-            this.group9.Items.Add(this.button4);
-            this.group9.Label = " ";
-            this.group9.Name = "group9";
-            // 
-            // button4
-            // 
-            this.button4.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            this.button4.Label = " Help";
-            this.button4.Name = "button4";
-            this.button4.OfficeImageId = "TentativeAcceptInvitation";
-            this.button4.ShowImage = true;
-            this.button4.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button4_Click);
+            this.buttonTonalDashboard.Label = "Tonal Dashboard";
+            this.buttonTonalDashboard.Name = "buttonTonalDashboard";
+            this.buttonTonalDashboard.OfficeImageId = "Chart3DBarChart";
+            this.buttonTonalDashboard.ShowImage = true;
+            this.buttonTonalDashboard.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonTonalDashboard_Click);
             // 
             // ConfigurationRibbon
             // 
             this.Name = "ConfigurationRibbon";
+            // 
+            // ConfigurationRibbon.OfficeMenu
+            // 
+            this.OfficeMenu.Items.Add(this.buttonTonalDashboard);
             this.RibbonType = "Microsoft.Outlook.Explorer";
             this.Tabs.Add(this.tabMessageCategories);
             this.Tabs.Add(this.tabOutboudMessageAlerts);
@@ -504,6 +517,8 @@
             this.groupLanguage.PerformLayout();
             this.groupSocialTendencies.ResumeLayout(false);
             this.groupSocialTendencies.PerformLayout();
+            this.group8.ResumeLayout(false);
+            this.group8.PerformLayout();
             this.tabMessageCategories.ResumeLayout(false);
             this.tabMessageCategories.PerformLayout();
             this.group1.ResumeLayout(false);
@@ -512,6 +527,8 @@
             this.group2.PerformLayout();
             this.group3.ResumeLayout(false);
             this.group3.PerformLayout();
+            this.group7.ResumeLayout(false);
+            this.group7.PerformLayout();
             this.tabThresholds.ResumeLayout(false);
             this.tabThresholds.PerformLayout();
             this.group4.ResumeLayout(false);
@@ -522,10 +539,6 @@
             this.buttonGroup1.PerformLayout();
             this.group6.ResumeLayout(false);
             this.group6.PerformLayout();
-            this.group7.ResumeLayout(false);
-            this.group7.PerformLayout();
-            this.group8.ResumeLayout(false);
-            this.group8.PerformLayout();
             this.group9.ResumeLayout(false);
             this.group9.PerformLayout();
             this.ResumeLayout(false);
@@ -585,6 +598,7 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonButton button3;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup group9;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton button4;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonTonalDashboard;
     }
 
     partial class ThisRibbonCollection

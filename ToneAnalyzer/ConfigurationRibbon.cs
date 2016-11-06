@@ -3,12 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Office.Tools.Ribbon;
+using Outlook = Microsoft.Office.Interop.Outlook;
+using System.Windows.Forms;
+using System.Reflection;
+using System.Runtime.InteropServices;
+using System.IO;
 
 namespace ToneAnalyzer
 {
     public partial class ConfigurationRibbon
     {
-   
+        DashboardDataAccess _dashboardDatabase;
         private void UserConfigurationRibbon_Load(object sender, RibbonUIEventArgs e)
         {
             checkBoxAngerCategory.Checked = Properties.Settings.Default.AngerIncluded;
@@ -325,5 +330,95 @@ namespace ToneAnalyzer
         {
             System.Windows.Forms.MessageBox.Show("If an outgoing email belongs to one of the checked categories, an alert will fire before the message is sent allowing you to cancel the message.", "Alerts");
         }
+        private EmailAnalysis GetAnalysis(Outlook.MailItem mail)
+        {
+            Outlook.UserProperties mailUserProperties = null;
+            Outlook.UserProperty mailUserProperty = null;
+            StringBuilder builder = new StringBuilder();
+            mailUserProperties = mail.UserProperties;
+            try
+            {
+                for (int i = 1; i <= mailUserProperties.Count; i++)
+                {
+                    mailUserProperty = mailUserProperties[i];
+                    if (mailUserProperty != null && mailUserProperty.Name == "Serialized Analysis")
+                    {
+                   string serializedAnalysis = mailUserProperty.Value;
+                        return Deserialize(serializedAnalysis);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+
+            }
+            finally
+            {
+                if (mailUserProperties != null)
+                    Marshal.ReleaseComObject(mailUserProperties);
+            }
+            return new EmailAnalysis();
+        }
+        private void AddItemToDashboard(string folder,  Outlook.MailItem mailItem, int emailId)
+        {
+
+            EmailAnalysis analysis = GetAnalysis(mailItem);
+            string categories = mailItem.Categories;
+            string subject = mailItem.Subject;
+            DateTime receivedTime = mailItem.ReceivedTime;
+            string importance = mailItem.Importance.ToString();
+            bool readReceipt = mailItem.ReadReceiptRequested;
+            string senderAddress = mailItem.SenderEmailAddress;
+            string senderName = mailItem.SenderName;
+            _dashboardDatabase.AddEmail(emailId, folder, analysis, categories, subject, receivedTime, importance, readReceipt, senderName, senderAddress);
+        }
+        private static EmailAnalysis Deserialize(string analysisSerialized)
+        {
+            EmailAnalysis analysisDeserialized;
+            var serializer = new System.Xml.Serialization.XmlSerializer(typeof(EmailAnalysis));
+            using (var reader = new StringReader(analysisSerialized))
+            {
+                analysisDeserialized = (EmailAnalysis)serializer.Deserialize(reader);
+            }
+
+            return analysisDeserialized;
+        }
+
+        private void buttonTonalDashboard_Click(object sender, RibbonControlEventArgs e)
+        {
+           _dashboardDatabase = new DashboardDataAccess();
+            _dashboardDatabase.CreateSchema();
+            Outlook.Application oApp;
+            Outlook._NameSpace oNS;
+            oApp = new Outlook.Application();
+            oNS = (Outlook._NameSpace)oApp.GetNamespace("MAPI");
+            Outlook.MAPIFolder mailsFromThisFolder;
+            oNS.Logon(Missing.Value, Missing.Value, false, true);
+
+            Outlook.MAPIFolder mainFolder = oNS.GetDefaultFolder(Outlook.OlDefaultFolders.olFolderInbox);
+            int emailId = 1;
+            foreach (Object item in mainFolder.Items)
+            {
+                Outlook.MailItem mailItem = (Outlook.MailItem)item;
+                AddItemToDashboard("Inbox", mailItem, emailId);
+                emailId++;
+            }
+
+            foreach (Outlook.MAPIFolder folder in mainFolder.Folders)
+            {
+                foreach (Object item in folder.Items)
+                {
+                    Outlook.MailItem mailItem = (Outlook.MailItem)item;
+                    AddItemToDashboard(folder.Name, mailItem, emailId);
+                    emailId++;
+                }
+
+            }
+            _dashboardDatabase.Close();
+            MessageDashboard dashboard = new MessageDashboard(_dashboardDatabase.FileName);
+            dashboard.ShowDialog();
+        }
+
+        }
     }
-}
