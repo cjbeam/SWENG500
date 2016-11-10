@@ -21,7 +21,7 @@ namespace Tonal.Data
         public SqlConnection GetSQLConnection()
         {
             string conn =
-                "Data Source=psu.database.windows.net;" +
+                "Data Source=toneanalyzer.database.windows.net;" +
                 "Initial Catalog=ToneAnalyzer;" +
                 "User id=sweng500;" +
                 "Password=sweng!23;";

@@ -3,7 +3,7 @@
   <Role name="WCFMemberServiceWebRole">
     <Instances count="1" />
     <ConfigurationSettings>
-      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="UseDevelopmentStorage=true" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=tonalservice;AccountKey=qEn9OzKUoYy85p02i0FppZahes9Akeqn6bpESpjzMBkGrri3W+sJq01zejhP99VBU28KDzs5RhOSLZ2DrbRhJw==" />
     </ConfigurationSettings>
   </Role>
 </ServiceConfiguration>

@@ -37,7 +37,7 @@ namespace TonalService
         public void PersistResults(EmailAnalysis emailAnalysis, string emailAddress, string emailMessage)
         {
             string analysisId = Guid.NewGuid().ToString();
-            OleDbConnection conn = new OleDbConnection("Provider=sqloledb;Data Source=tcp:psu.database.windows.net,1433;Initial Catalog=ToneAnalyzer;Persist Security Info=False;User ID=sweng500;Password=sweng!23;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+            OleDbConnection conn = new OleDbConnection("Provider=sqloledb;Data Source=tcp:toneanalyzer.database.windows.net,1433;Initial Catalog=ToneAnalyzer;Persist Security Info=False;User ID=sweng500;Password=sweng!23;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
             using (conn)
             {
                 conn.Open();
@@ -60,7 +60,7 @@ namespace TonalService
             {
                 foreach(var categoryScore in categoryAnalysis.Tones)
                 {
-                    OleDbConnection conn = new OleDbConnection("Provider=sqloledb;Data Source=tcp:psu.database.windows.net,1433;Initial Catalog=ToneAnalyzer;Persist Security Info=False;User ID=sweng500;Password=sweng!23;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+                    OleDbConnection conn = new OleDbConnection("Provider=sqloledb;Data Source=tcp:toneanalyzer.database.windows.net,1433;Initial Catalog=ToneAnalyzer;Persist Security Info=False;User ID=sweng500;Password=sweng!23;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
                     using (conn)
                     {
                         conn.Open();
@@ -84,7 +84,7 @@ namespace TonalService
             {
                 string sentenceKey = Guid.NewGuid().ToString();
 
-                OleDbConnection conn = new OleDbConnection("Provider=sqloledb;Data Source=tcp:psu.database.windows.net,1433;Initial Catalog=ToneAnalyzer;Persist Security Info=False;User ID=sweng500;Password=sweng!23;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+                OleDbConnection conn = new OleDbConnection("Provider=sqloledb;Data Source=tcp:toneanalyzer.database.windows.net,1433;Initial Catalog=ToneAnalyzer;Persist Security Info=False;User ID=sweng500;Password=sweng!23;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
                 using (conn)
                 {
                     conn.Open();
@@ -101,7 +101,7 @@ namespace TonalService
                 {
                     foreach (var categoryScore in categoryAnalysis.Tones)
                     {
-                        conn = new OleDbConnection("Provider=sqloledb;Data Source=tcp:psu.database.windows.net,1433;Initial Catalog=ToneAnalyzer;Persist Security Info=False;User ID=sweng500;Password=sweng!23;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+                        conn = new OleDbConnection("Provider=sqloledb;Data Source=tcp:toneanalyzer.database.windows.net,1433;Initial Catalog=ToneAnalyzer;Persist Security Info=False;User ID=sweng500;Password=sweng!23;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
                         using (conn)
                         {
                             conn.Open();
