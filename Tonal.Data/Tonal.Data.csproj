@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseDataService.cs" />
+    <Compile Include="MemberFieldDataService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MemberDataService.cs" />
   </ItemGroup>
