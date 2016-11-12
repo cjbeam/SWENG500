@@ -12,18 +12,12 @@ namespace WCFMemberServiceWebRole
     public interface IMemberFieldService
     {
         [OperationContract]
-        [WebInvoke(Method = "GET", RequestFormat = WebMessageFormat.Json,
-            ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare, UriTemplate = "GetEducationLevels/")]
-        List<Tonal.Model.Education> GetEducationLevels();
+        string GetEducationLevels();
         
         [OperationContract]
-        [WebInvoke(Method = "GET", RequestFormat = WebMessageFormat.Json,
-            ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare, UriTemplate = "GetGenderOptions/")]
-        List<Tonal.Model.Gender> GetGenderOptions();
+        string GetGenderOptions();
     
         [OperationContract]
-        [WebInvoke(Method = "GET", RequestFormat = WebMessageFormat.Json,
-            ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare, UriTemplate = "GetStatesList/")]
-        List<Tonal.Model.State> GetStatesList();
+        string GetStatesList();
     }
 }

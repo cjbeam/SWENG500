@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace WCFMemberServiceWebRole
     [ServiceBehavior(IncludeExceptionDetailInFaults = true)]
     public class MemberFieldService : IMemberFieldService
     {
-        public List<Education> GetEducationLevels()
+        public string GetEducationLevels()
         {
             Tonal.Data.MemberFieldDataService ds = new Tonal.Data.MemberFieldDataService();
             var dt = ds.LookupEducationOptions();
@@ -38,10 +39,10 @@ namespace WCFMemberServiceWebRole
                 }
             }
 
-            return list;
+            return JsonConvert.SerializeObject(list);
         }
 
-        public List<Gender> GetGenderOptions()
+        public string GetGenderOptions()
         {
             Tonal.Data.MemberFieldDataService ds = new Tonal.Data.MemberFieldDataService();
             var dt = ds.LookupEducationOptions();
@@ -62,10 +63,10 @@ namespace WCFMemberServiceWebRole
                 }
             }
 
-            return list;
+            return JsonConvert.SerializeObject(list);
         }
 
-        public List<State> GetStatesList()
+        public string GetStatesList()
         {
             Tonal.Data.MemberFieldDataService ds = new Tonal.Data.MemberFieldDataService();
             var dt = ds.LookupEducationOptions();
@@ -87,7 +88,7 @@ namespace WCFMemberServiceWebRole
                 }
             }
 
-            return list;
+            return JsonConvert.SerializeObject(list);
         }
     }
 }

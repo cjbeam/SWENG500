@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -33,7 +34,7 @@ namespace WCFMemberServiceWebRole
             }
         }
 
-        public Tonal.Model.Member Read(string email)
+        public string Read(string email)
         {
             try
             {
@@ -57,8 +58,8 @@ namespace WCFMemberServiceWebRole
                     member.state.StateCode = (string)dt.Rows[0]["stateCode"];
                     member.state.StateName = (string)dt.Rows[0]["stateName"];
                 }
-
-                return member;
+                
+                return JsonConvert.SerializeObject(member);
             }
             catch (Exception)
             {
