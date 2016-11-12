@@ -54,6 +54,7 @@
     <DiagnosticsConfiguration Include="WCFMemberServiceWebRoleContent\diagnostics.wadcfgx" />
   </ItemGroup>
   <ItemGroup>
+    <PublishProfile Include="Profiles\psuwebregistrationProduction.azurePubxml" />
     <PublishProfile Include="Profiles\webregistrationProduction.azurePubxml" />
   </ItemGroup>
   <!-- Import the target files for this project template -->
