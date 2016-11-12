@@ -6,7 +6,7 @@ using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
 
-namespace WCFMemberServiceWebRole
+namespace Tonal.Contract
 {
     [ServiceContract]
     public interface IMemberFieldService

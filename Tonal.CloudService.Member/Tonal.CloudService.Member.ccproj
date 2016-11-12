@@ -49,9 +49,11 @@
   <ItemGroup>
     <Folder Include="Profiles" />
     <Folder Include="WCFMemberServiceWebRoleContent\" />
+    <Folder Include="WCFMemberServiceWorkerRoleContent\" />
   </ItemGroup>
   <ItemGroup>
     <DiagnosticsConfiguration Include="WCFMemberServiceWebRoleContent\diagnostics.wadcfgx" />
+    <DiagnosticsConfiguration Include="WCFMemberServiceWorkerRoleContent\diagnostics.wadcfgx" />
   </ItemGroup>
   <ItemGroup>
     <PublishProfile Include="Profiles\psuwebregistrationProduction.azurePubxml" />

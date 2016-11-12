@@ -103,14 +103,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="IMemberFieldService.cs" />
     <Compile Include="MemberFieldService.svc.cs">
       <DependentUpon>MemberFieldService.svc</DependentUpon>
     </Compile>
     <Compile Include="MemberService.svc.cs">
       <DependentUpon>MemberService.svc</DependentUpon>
     </Compile>
-    <Compile Include="IMemberService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebRole.cs" />
   </ItemGroup>
@@ -131,6 +129,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Tonal.Contract\Tonal.Contract.csproj">
+      <Project>{090a93b9-475d-491a-81a2-898c57c6af34}</Project>
+      <Name>Tonal.Contract</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Tonal.Data\Tonal.Data.csproj">
       <Project>{4cbaff99-ef6b-4607-a7d1-b44361c3cffd}</Project>
       <Name>Tonal.Data</Name>
