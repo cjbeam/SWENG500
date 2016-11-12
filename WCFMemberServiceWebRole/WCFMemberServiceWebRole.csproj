@@ -96,11 +96,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="MemberFieldService.svc" />
     <Content Include="MemberService.svc" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="IMemberFieldService.cs" />
+    <Compile Include="MemberFieldService.svc.cs">
+      <DependentUpon>MemberFieldService.svc</DependentUpon>
     </Compile>
     <Compile Include="MemberService.svc.cs">
       <DependentUpon>MemberService.svc</DependentUpon>
