@@ -12,11 +12,13 @@ namespace WCFMemberServiceWebRole
     public interface IMemberService
     {
         [OperationContract]
-        [WebInvoke(UriTemplate = "Read/{email}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, Method = "GET", BodyStyle = WebMessageBodyStyle.Wrapped)]
+        [WebInvoke(Method = "GET", RequestFormat = WebMessageFormat.Json,
+            ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare, UriTemplate = "Read/")]
         Tonal.Model.Member Read(string email);
 
         [OperationContract]
-        [WebInvoke(UriTemplate = "/Create", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped)]
+        [WebInvoke(Method = "POST", UriTemplate = "Create", RequestFormat = WebMessageFormat.Json, 
+            ResponseFormat = WebMessageFormat.Json, BodyStyle =  WebMessageBodyStyle.Bare)]
         bool Create(Tonal.Model.Member member);
     }
 }
