@@ -12,15 +12,12 @@ namespace Tonal.Contract
     public interface IMemberFieldService
     {
         [OperationContract]
-        [WebGet(ResponseFormat = WebMessageFormat.Json, UriTemplate = "GetEducationLevels")]
         string GetEducationLevels();
         
         [OperationContract]
-        [WebGet(ResponseFormat = WebMessageFormat.Json, UriTemplate = "GetGenderOptions")]
         string GetGenderOptions();
     
         [OperationContract]
-        [WebGet(ResponseFormat = WebMessageFormat.Json, UriTemplate = "GetStatesList")]
         string GetStatesList();
     }
 }
