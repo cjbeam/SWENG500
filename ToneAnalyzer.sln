@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tonal.Contract", "Tonal.Con
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tonal.WCFService", "Tonal.WCFService\Tonal.WCFService.csproj", "{19CAC50D-C229-4F55-B9FC-926B0F27759E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCF.WebRole.MemberService", "WCF.WebRole.MemberService\WCF.WebRole.MemberService.csproj", "{6D710CB3-E353-4C6F-9EE6-480A33EBBF0D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{19CAC50D-C229-4F55-B9FC-926B0F27759E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19CAC50D-C229-4F55-B9FC-926B0F27759E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19CAC50D-C229-4F55-B9FC-926B0F27759E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D710CB3-E353-4C6F-9EE6-480A33EBBF0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D710CB3-E353-4C6F-9EE6-480A33EBBF0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D710CB3-E353-4C6F-9EE6-480A33EBBF0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D710CB3-E353-4C6F-9EE6-480A33EBBF0D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
