@@ -43,6 +43,7 @@ namespace Tonal.Model
         }
     }
 
+    [Serializable()]
     public class MemberViewModel
     {
         public int memberId { get; set; }
