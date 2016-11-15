@@ -38,6 +38,18 @@
     <ServiceConfiguration Include="ServiceConfiguration.Cloud.cscfg" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Profiles" />
+    <Folder Include="WCF.WebRole.MemberServiceContent\" />
+    <Folder Include="WCFMemberServiceWebRoleContent\" />
+  </ItemGroup>
+  <ItemGroup>
+    <DiagnosticsConfiguration Include="WCF.WebRole.MemberServiceContent\diagnostics.wadcfgx" />
+    <DiagnosticsConfiguration Include="WCFMemberServiceWebRoleContent\diagnostics.wadcfgx" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishProfile Include="Profiles\psuwebregistrationProduction.azurePubxml" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\WCF.WebRole.MemberService\WCF.WebRole.MemberService.csproj">
       <Name>WCF.WebRole.MemberService</Name>
       <Project>{6d710cb3-e353-4c6f-9ee6-480a33ebbf0d}</Project>
@@ -46,16 +58,6 @@
       <RoleName>WCF.WebRole.MemberService</RoleName>
       <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Profiles" />
-    <Folder Include="WCF.WebRole.MemberServiceContent\" />
-  </ItemGroup>
-  <ItemGroup>
-    <DiagnosticsConfiguration Include="WCF.WebRole.MemberServiceContent\diagnostics.wadcfgx" />
-  </ItemGroup>
-  <ItemGroup>
-    <PublishProfile Include="Profiles\psuwebregistrationProduction.azurePubxml" />
   </ItemGroup>
   <!-- Import the target files for this project template -->
   <PropertyGroup>

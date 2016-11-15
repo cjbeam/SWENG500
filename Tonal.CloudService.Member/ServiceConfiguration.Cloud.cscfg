@@ -9,7 +9,7 @@
   <Role name="WCF.WebRole.MemberService">
     <Instances count="1" />
     <ConfigurationSettings>
-      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=psustorageaccount;AccountKey=h7wjk4fPivk4lNWQGxzkuVnes25tIc+hu/hUI1sR8QOxuQ+PFpcoIzbPJj1wRQvU1DHn1F33T329jMw68j/kJQ==" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="UseDevelopmentStorage=true" />
     </ConfigurationSettings>
   </Role>
 </ServiceConfiguration>
