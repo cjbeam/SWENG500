@@ -22,6 +22,34 @@ namespace Tonal.Model
         public State state { get; set; }
         [DataMember]
         public Education education { get; set; }
+
+        public Member()
+        {
+            gender = new Gender();
+            state = new State();
+            education = new Education();
+        }
+
+        public Member(MemberViewModel viewModel)
+        {
+            email = viewModel.email;
+            birthDate = viewModel.birthDate;
+            gender = new Gender();
+            gender.GenderId = viewModel.genderId;
+            state = new State();
+            state.StateId = viewModel.stateId;
+            education = new Education();
+            education.EducationId = viewModel.educationId;
+        }
     }
-    
+
+    public class MemberViewModel
+    {
+        public int memberId { get; set; }
+        public string email { get; set; }
+        public DateTime birthDate { get; set; }
+        public int genderId { get; set; }
+        public int stateId { get; set; }
+        public int educationId { get; set; }
+    }
 }
