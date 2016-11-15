@@ -8,8 +8,7 @@ namespace Tonal.WebService.Members {
     public static class WebApiConfig {
         public static void Register(HttpConfiguration config) {
             // Global Cors
-            var corsAttr = new EnableCorsAttribute("http://psuwebmemberservice.azurewebsites.net","*","*");
-            config.EnableCors(corsAttr);
+            EnableCrossSiteRequests(config);
 
             // Web API configuration and services
             // Web API routes
@@ -20,6 +19,14 @@ namespace Tonal.WebService.Members {
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+        }
+
+        private static void EnableCrossSiteRequests(HttpConfiguration config) {
+            var cors = new EnableCorsAttribute(
+                origins: "*",
+                headers: "*",
+                methods: "*");
+            config.EnableCors(cors);
         }
     }
 }
