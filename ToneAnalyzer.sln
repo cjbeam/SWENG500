@@ -17,8 +17,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tonal.Data", "Tonal.Data\To
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tonal.Data.Test", "Tonal.Data.Test\Tonal.Data.Test.csproj", "{E6BF5AAF-CB11-454D-B2C5-E689EE0E3E47}"
 EndProject
-Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "Tonal.CloudService.Member", "Tonal.CloudService.Member\Tonal.CloudService.Member.ccproj", "{52ADA83D-F899-4E00-BB91-3ADCD1A4F1D6}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tonal.Contract", "Tonal.Contract\Tonal.Contract.csproj", "{090A93B9-475D-491A-81A2-898C57C6AF34}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tonal.WebService.Members", "Tonal.WebService.Members\Tonal.WebService.Members.csproj", "{AC8052C1-93E1-45CA-8E35-B9F898C76727}"
@@ -59,10 +57,6 @@ Global
 		{E6BF5AAF-CB11-454D-B2C5-E689EE0E3E47}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6BF5AAF-CB11-454D-B2C5-E689EE0E3E47}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E6BF5AAF-CB11-454D-B2C5-E689EE0E3E47}.Release|Any CPU.Build.0 = Release|Any CPU
-		{52ADA83D-F899-4E00-BB91-3ADCD1A4F1D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{52ADA83D-F899-4E00-BB91-3ADCD1A4F1D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{52ADA83D-F899-4E00-BB91-3ADCD1A4F1D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{52ADA83D-F899-4E00-BB91-3ADCD1A4F1D6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{090A93B9-475D-491A-81A2-898C57C6AF34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{090A93B9-475D-491A-81A2-898C57C6AF34}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{090A93B9-475D-491A-81A2-898C57C6AF34}.Release|Any CPU.ActiveCfg = Release|Any CPU
