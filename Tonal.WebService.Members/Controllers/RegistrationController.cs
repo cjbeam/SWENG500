@@ -9,14 +9,13 @@ using Tonal.Model;
 
 namespace Tonal.WebService.Members.Controllers {
     public class RegistrationController : ApiController {
-        [ResponseType(typeof(void))]
-        public IHttpActionResult Post(Tonal.Model.MemberViewModel memberViewModel) {
+        public IHttpActionResult Post(Tonal.Model.Registration registration) {
             IHttpActionResult actionResult;
 
             try {
                 Tonal.Data.MemberDataService memberDataService = new Tonal.Data.MemberDataService();
 
-                var member = new Tonal.Model.Member(memberViewModel);
+                var member = new Tonal.Model.Member(registration);
                 //Logic
                 var pass = memberDataService.Create(member);
                 if(pass) {

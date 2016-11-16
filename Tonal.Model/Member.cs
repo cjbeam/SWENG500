@@ -7,20 +7,13 @@ using System.Threading.Tasks;
 
 namespace Tonal.Model
 {
-    [DataContract]
     public class Member
     {
-        [DataMember]
         public int memberId { get; set; }
-        [DataMember]
         public string email { get; set; }
-        [DataMember]
         public DateTime birthDate { get; set; }
-        [DataMember]
         public Gender gender { get; set; }
-        [DataMember]
         public State state { get; set; }
-        [DataMember]
         public Education education { get; set; }
 
         public Member()
@@ -30,27 +23,16 @@ namespace Tonal.Model
             education = new Education();
         }
 
-        public Member(MemberViewModel viewModel)
+        public Member(Registration registration)
         {
-            email = viewModel.email;
-            birthDate = viewModel.birthDate;
+            email = registration.email;
+            birthDate = registration.birthDate;
             gender = new Gender();
-            gender.GenderId = viewModel.genderId;
+            gender.GenderId = registration.genderId;
             state = new State();
-            state.StateId = viewModel.stateId;
+            state.StateId = registration.stateId;
             education = new Education();
-            education.EducationId = viewModel.educationId;
+            education.EducationId = registration.educationId;
         }
-    }
-
-    [Serializable()]
-    public class MemberViewModel
-    {
-        public int memberId { get; set; }
-        public string email { get; set; }
-        public DateTime birthDate { get; set; }
-        public int genderId { get; set; }
-        public int stateId { get; set; }
-        public int educationId { get; set; }
     }
 }
