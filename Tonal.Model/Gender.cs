@@ -7,12 +7,9 @@ using System.Threading.Tasks;
 
 namespace Tonal.Model
 {
-    [DataContract]
     public class Gender
     {
-        [DataMember]
         public int GenderId { get; set; }
-        [DataMember]
         public string GenderType { get; set; }
     }
 }
