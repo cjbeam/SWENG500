@@ -5,7 +5,8 @@ namespace Tonal.WebService.Members.Tests {
     [TestClass]
     public class UnitTestEducationLevels {
         [TestMethod]
-        public void TestMethod1() {
+        public void TestGetEducationLevels() {
+            //var list = Request
         }
     }
 }
