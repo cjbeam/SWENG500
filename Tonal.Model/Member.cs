@@ -7,21 +7,32 @@ using System.Threading.Tasks;
 
 namespace Tonal.Model
 {
-    [DataContract]
     public class Member
     {
-        [DataMember]
         public int memberId { get; set; }
-        [DataMember]
         public string email { get; set; }
-        [DataMember]
         public DateTime birthDate { get; set; }
-        [DataMember]
         public Gender gender { get; set; }
-        [DataMember]
         public State state { get; set; }
-        [DataMember]
         public Education education { get; set; }
+
+        public Member()
+        {
+            gender = new Gender();
+            state = new State();
+            education = new Education();
+        }
+
+        public Member(Registration registration)
+        {
+            email = registration.email;
+            birthDate = registration.birthDate;
+            gender = new Gender();
+            gender.GenderId = registration.genderId;
+            state = new State();
+            state.StateId = registration.stateId;
+            education = new Education();
+            education.EducationId = registration.educationId;
+        }
     }
-    
 }

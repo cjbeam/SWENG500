@@ -7,14 +7,10 @@ using System.Threading.Tasks;
 
 namespace Tonal.Model
 {
-    [DataContract]
     public class State
     {
-        [DataMember]
         public int StateId { get; set; }
-        [DataMember]
         public string StateName { get; set; }
-        [DataMember]
         public string StateCode { get; set; }
     }
 }

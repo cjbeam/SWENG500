@@ -12,6 +12,7 @@
     <AssemblyName>Tonal.CloudService.Member</AssemblyName>
     <StartDevelopmentStorage>True</StartDevelopmentStorage>
     <Name>Tonal.CloudService.Member</Name>
+    <PackageEnableRemoteDebugger>False</PackageEnableRemoteDebugger>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -37,25 +38,26 @@
     <ServiceConfiguration Include="ServiceConfiguration.Cloud.cscfg" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WCFMemberServiceWebRole\WCFMemberServiceWebRole.csproj">
-      <Name>WCFMemberServiceWebRole</Name>
-      <Project>{263f8771-dfba-4293-beb3-82c7b6fc924e}</Project>
-      <Private>True</Private>
-      <RoleType>Web</RoleType>
-      <RoleName>WCFMemberServiceWebRole</RoleName>
-      <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Profiles" />
+    <Folder Include="WCF.WebRole.MemberServiceContent\" />
     <Folder Include="WCFMemberServiceWebRoleContent\" />
   </ItemGroup>
   <ItemGroup>
+    <DiagnosticsConfiguration Include="WCF.WebRole.MemberServiceContent\diagnostics.wadcfgx" />
     <DiagnosticsConfiguration Include="WCFMemberServiceWebRoleContent\diagnostics.wadcfgx" />
   </ItemGroup>
   <ItemGroup>
     <PublishProfile Include="Profiles\psuwebregistrationProduction.azurePubxml" />
-    <PublishProfile Include="Profiles\webregistrationProduction.azurePubxml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WCF.WebRole.MemberService\WCF.WebRole.MemberService.csproj">
+      <Name>WCF.WebRole.MemberService</Name>
+      <Project>{6d710cb3-e353-4c6f-9ee6-480a33ebbf0d}</Project>
+      <Private>True</Private>
+      <RoleType>Web</RoleType>
+      <RoleName>WCF.WebRole.MemberService</RoleName>
+      <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
+    </ProjectReference>
   </ItemGroup>
   <!-- Import the target files for this project template -->
   <PropertyGroup>

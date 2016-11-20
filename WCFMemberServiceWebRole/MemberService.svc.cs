@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
+using System.ServiceModel.Activation;
 using System.ServiceModel.Web;
 using System.Text;
 using Tonal.Model;
@@ -12,7 +14,7 @@ namespace WCFMemberServiceWebRole
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in code, svc and config file together.
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
-    public class MemberService : IMemberService
+    public class MemberService : Tonal.Contract.IMemberService
     {
         public bool Create(Member member)
         {
@@ -30,7 +32,7 @@ namespace WCFMemberServiceWebRole
             }
         }
 
-        public Tonal.Model.Member Read(string email)
+        public string Read(string email)
         {
             try
             {
@@ -54,8 +56,8 @@ namespace WCFMemberServiceWebRole
                     member.state.StateCode = (string)dt.Rows[0]["stateCode"];
                     member.state.StateName = (string)dt.Rows[0]["stateName"];
                 }
-
-                return member;
+                
+                return JsonConvert.SerializeObject(member);
             }
             catch (Exception)
             {
