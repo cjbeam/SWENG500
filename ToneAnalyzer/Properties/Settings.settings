@@ -119,5 +119,8 @@
     <Setting Name="EmotionalRangeThreshold" Type="System.Double" Scope="User">
       <Value Profile="(Default)">0.6</Value>
     </Setting>
+    <Setting Name="EmailAddress" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

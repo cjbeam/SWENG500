@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using Microsoft.Office.Interop.Outlook;
 using Newtonsoft.Json;
 using Outlook = Microsoft.Office.Interop.Outlook;
+
 namespace ToneAnalyzer
 {
     public partial class AnalyzeRibbon
@@ -15,11 +16,13 @@ namespace ToneAnalyzer
         private EmailAnalysis _emailAnalysis;
         private string _messageHtml;
         private Microsoft.Office.Interop.Outlook.MailItem _currentMailItem;
-  
+
+
         private void AnalyzeRibbon_Load(object sender, RibbonUIEventArgs e)
         {
 
         }
+    
 
         private void AnalyzeTone_Click(object sender, RibbonControlEventArgs e)
         {
@@ -33,13 +36,13 @@ namespace ToneAnalyzer
             _messageHtml = _currentMailItem.HTMLBody;
 
             resultsGroup.Visible = true;
-            var service = new RemoteTonalService.TonalAnalysisServiceClient();
+            var service = new RemoteTonalService.TonalServiceClient();
             if (_currentMailItem == null) return;
             string json="";
             try
             {
-
-                json = service.GetAnalysis(GetSenderSMTPAddress(_currentMailItem), _currentMailItem.Body);
+                string email = Properties.Settings.Default.EmailAddress;
+                json = service.GetAnalysis(email, _currentMailItem.Body, "ToneAnalyzerUserName", "ToneAnalyzerPassword");
 
                 try
                 {
@@ -59,56 +62,7 @@ namespace ToneAnalyzer
                     MessageBox.Show(exception.Message, "Unable to Analyze Message");
                 }
         }
-        private string GetSenderSMTPAddress(Outlook.MailItem mail)
-        {
-            string PR_SMTP_ADDRESS =
-                @"http://schemas.microsoft.com/mapi/proptag/0x39FE001E";
-            if (mail == null)
-            {
-                throw new ArgumentNullException();
-            }
-            if (mail.SenderEmailType == "EX")
-            {
-                Outlook.AddressEntry sender =
-                    mail.Sender;
-                if (sender != null)
-                {
-                    //Now we have an AddressEntry representing the Sender
-                    if (sender.AddressEntryUserType ==
-                        Outlook.OlAddressEntryUserType.
-                        olExchangeUserAddressEntry
-                        || sender.AddressEntryUserType ==
-                        Outlook.OlAddressEntryUserType.
-                        olExchangeRemoteUserAddressEntry)
-                    {
-                        //Use the ExchangeUser object PrimarySMTPAddress
-                        Outlook.ExchangeUser exchUser =
-                            sender.GetExchangeUser();
-                        if (exchUser != null)
-                        {
-                            return exchUser.PrimarySmtpAddress;
-                        }
-                        else
-                        {
-                            return null;
-                        }
-                    }
-                    else
-                    {
-                        return sender.PropertyAccessor.GetProperty(
-                            PR_SMTP_ADDRESS) as string;
-                    }
-                }
-                else
-                {
-                    return null;
-                }
-            }
-            else
-            {
-                return mail.SenderEmailAddress;
-            }
-        }
+       
         private void RenderGauges(EmailAnalysis analysis)
         {
             foreach (var result in analysis.BodyResult.CategoryAnalyses)

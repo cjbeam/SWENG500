@@ -91,6 +91,8 @@
             this.group6 = this.Factory.CreateRibbonGroup();
             this.labelThresholdValue = this.Factory.CreateRibbonLabel();
             this.group9 = this.Factory.CreateRibbonGroup();
+            this.backgroundWorkerDashboard = new System.ComponentModel.BackgroundWorker();
+            this.buttonTonalDashboard = this.Factory.CreateRibbonButton();
             this.buttonHelp = this.Factory.CreateRibbonButton();
             this.button3 = this.Factory.CreateRibbonButton();
             this.buttonThresholdUp = this.Factory.CreateRibbonButton();
@@ -98,7 +100,6 @@
             this.button4 = this.Factory.CreateRibbonButton();
             this.button1 = this.Factory.CreateRibbonButton();
             this.button2 = this.Factory.CreateRibbonButton();
-            this.buttonTonalDashboard = this.Factory.CreateRibbonButton();
             this.tabOutboudMessageAlerts.SuspendLayout();
             this.groupEmotion.SuspendLayout();
             this.groupLanguage.SuspendLayout();
@@ -434,6 +435,21 @@
             this.group9.Label = " ";
             this.group9.Name = "group9";
             // 
+            // backgroundWorkerDashboard
+            // 
+            this.backgroundWorkerDashboard.WorkerReportsProgress = true;
+            this.backgroundWorkerDashboard.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerDashboard_DoWork);
+            this.backgroundWorkerDashboard.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorkerDashboard_ProgressChanged);
+            this.backgroundWorkerDashboard.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorkerDashboard_RunWorkerCompleted);
+            // 
+            // buttonTonalDashboard
+            // 
+            this.buttonTonalDashboard.Label = "Tonal Dashboard";
+            this.buttonTonalDashboard.Name = "buttonTonalDashboard";
+            this.buttonTonalDashboard.OfficeImageId = "Chart3DBarChart";
+            this.buttonTonalDashboard.ShowImage = true;
+            this.buttonTonalDashboard.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonTonalDashboard_Click);
+            // 
             // buttonHelp
             // 
             this.buttonHelp.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
@@ -488,14 +504,6 @@
             // 
             this.button2.Label = "";
             this.button2.Name = "button2";
-            // 
-            // buttonTonalDashboard
-            // 
-            this.buttonTonalDashboard.Label = "Tonal Dashboard";
-            this.buttonTonalDashboard.Name = "buttonTonalDashboard";
-            this.buttonTonalDashboard.OfficeImageId = "Chart3DBarChart";
-            this.buttonTonalDashboard.ShowImage = true;
-            this.buttonTonalDashboard.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonTonalDashboard_Click);
             // 
             // ConfigurationRibbon
             // 
@@ -599,6 +607,7 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup group9;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton button4;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonTonalDashboard;
+        private System.ComponentModel.BackgroundWorker backgroundWorkerDashboard;
     }
 
     partial class ThisRibbonCollection

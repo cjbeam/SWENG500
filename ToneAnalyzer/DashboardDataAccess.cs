@@ -5,7 +5,7 @@ using System.Data.SQLite;
 
 namespace ToneAnalyzer
 {
-    class DashboardDataAccess
+    public class DashboardDataAccess
     {
         SQLiteConnection _dbConnection;
         string _fileName;

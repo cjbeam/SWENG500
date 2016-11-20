@@ -27,7 +27,7 @@ namespace ToneAnalyzer
             _items = _inbox.Items;
             _items.ItemAdd += items_ItemAdd;
             Application.ItemSend += application_itemSend;
-
+            Properties.Settings.Default.EmailAddress = _outlookNameSpace.CurrentUser.Address;
 
 
 
@@ -80,10 +80,12 @@ namespace ToneAnalyzer
 
             if (item != null)
             {
-                RemoteTonalService.TonalAnalysisServiceClient service = new RemoteTonalService.TonalAnalysisServiceClient();
+                   
+                RemoteTonalService.TonalServiceClient service = new RemoteTonalService.TonalServiceClient();
           if (mail.MessageClass == "IPM.Note")
           {
-              string json = service.GetAnalysis(_outlookNameSpace.CurrentUser.Address, mail.Body);
+                        
+              string json = service.GetAnalysis(_outlookNameSpace.CurrentUser.Address, mail.Body, "ToneAnalyzerUserName", "ToneAnalyzerPassword");
               EmailAnalysis emailAnalysis = JsonConvert.DeserializeObject<EmailAnalysis>(json);
                     Outlook.UserProperty serializedAnalysisProperty =
                      mail.UserProperties.Add("Serialized Analysis", Outlook.OlUserPropertyType.olText);

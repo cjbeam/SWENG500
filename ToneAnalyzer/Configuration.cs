@@ -52,6 +52,9 @@ namespace ToneAnalyzer
                     case "Emotional Range":
                         threshold = Properties.Settings.Default.EmotionalRangeThreshold;
                         break;
+                    case "Extraversion":
+                        threshold = Properties.Settings.Default.ExtraversionThreshold;
+                        break;
                 }
                         return threshold;
             }

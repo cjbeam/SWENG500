@@ -8,11 +8,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ToneAnalyzer.RemoteTonalService {
+namespace TestDatasetLoader.AnalysisService {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="RemoteTonalService.ITonalService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="AnalysisService.ITonalService")]
     public interface ITonalService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITonalService/GetAnalysis", ReplyAction="http://tempuri.org/ITonalService/GetAnalysisResponse")]
@@ -23,12 +23,12 @@ namespace ToneAnalyzer.RemoteTonalService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ITonalServiceChannel : ToneAnalyzer.RemoteTonalService.ITonalService, System.ServiceModel.IClientChannel {
+    public interface ITonalServiceChannel : TestDatasetLoader.AnalysisService.ITonalService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class TonalServiceClient : System.ServiceModel.ClientBase<ToneAnalyzer.RemoteTonalService.ITonalService>, ToneAnalyzer.RemoteTonalService.ITonalService {
+    public partial class TonalServiceClient : System.ServiceModel.ClientBase<TestDatasetLoader.AnalysisService.ITonalService>, TestDatasetLoader.AnalysisService.ITonalService {
         
         public TonalServiceClient() {
         }

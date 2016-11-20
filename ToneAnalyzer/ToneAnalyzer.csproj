@@ -399,6 +399,12 @@
     </Compile>
     <Compile Include="Configuration.cs" />
     <Compile Include="DashboardDataAccess.cs" />
+    <Compile Include="DashboardProgressForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DashboardProgressForm.Designer.cs">
+      <DependentUpon>DashboardProgressForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EmailAnalysis.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="MessageDashboard.cs">
@@ -418,6 +424,9 @@
     </Compile>
     <EmbeddedResource Include="AnalyzeRibbon.resx">
       <DependentUpon>AnalyzeRibbon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DashboardProgressForm.resx">
+      <DependentUpon>DashboardProgressForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MessageDashboard.resx">
       <DependentUpon>MessageDashboard.cs</DependentUpon>
@@ -445,8 +454,9 @@
     <EmbeddedResource Include="ConfigurationRibbon.resx">
       <DependentUpon>ConfigurationRibbon.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="app.config" />
-    <None Include="OpenSource_Developer_Certificate_KN.p12" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -483,11 +493,11 @@
     <Compile Include="ToneAnalyzerAddIn.cs">
       <SubType>Code</SubType>
     </Compile>
-    <None Include="Service References\RemoteTonalService\service.wsdl" />
-    <None Include="Service References\RemoteTonalService\service.xsd">
+    <None Include="Service References\RemoteTonalService\TonalService.wsdl" />
+    <None Include="Service References\RemoteTonalService\TonalService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\RemoteTonalService\service1.xsd">
+    <None Include="Service References\RemoteTonalService\TonalService1.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="ToneAnalyzerAddIn.Designer.xml">
@@ -497,24 +507,10 @@
       <DependentUpon>ToneAnalyzerAddIn.Designer.xml</DependentUpon>
     </Compile>
     <AppDesigner Include="Properties\" />
+    <None Include="ToneAnalyzer_2_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Service References\RemoteTonalService\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\RemoteTonalService\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\RemoteTonalService\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\RemoteTonalService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon.bmp" />
@@ -523,6 +519,16 @@
     <Content Include="EmailDashboard.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Service References\RemoteTonalService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\RemoteTonalService\configuration.svcinfo" />
+    <None Include="Service References\RemoteTonalService\configuration91.svcinfo" />
+    <None Include="Service References\RemoteTonalService\TonalService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\RemoteTonalService\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -532,10 +538,10 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>OpenSource_Developer_Certificate_KN.p12</ManifestKeyFile>
+    <ManifestKeyFile>ToneAnalyzer_2_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>5C2F8FD4FCB126D652BD0DA4DC3C9770FF1D9B42</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>266E6A933456E6A083080848B68F0AD51CDCC3BD</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>

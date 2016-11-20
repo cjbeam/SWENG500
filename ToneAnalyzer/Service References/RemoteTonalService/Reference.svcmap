@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="9fe2c44c-9da6-4eef-b129-1240eb9951bf" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b882a7e3-5eb7-4a70-8e4b-e9934b1ffdb4" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,12 +19,13 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/TonalService/Service1/mex" Protocol="mex" SourceId="1" />
+    <MetadataSource Address="http://psutonalservice.cloudapp.net/TonalService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="90b9f37f-c1e1-42cf-b6a2-2e6bc95a2024" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/TonalService/Service1/mex" />
-    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="788f5e97-cfd3-4605-a055-2c7ee21e4d70" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/TonalService/Service1/mex" />
-    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="793476b4-f7a3-4064-837b-edf356bc94a8" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/TonalService/Service1/mex" />
+    <MetadataFile FileName="TonalService.wsdl" MetadataType="Wsdl" ID="4dbd7ae6-b101-4e96-a4e0-47a78143f767" SourceId="1" SourceUrl="http://psutonalservice.cloudapp.net/TonalService.svc?wsdl" />
+    <MetadataFile FileName="TonalService.xsd" MetadataType="Schema" ID="cfe01047-0a9b-4f18-87da-73dfdb1b90d4" SourceId="1" SourceUrl="http://psutonalservice.cloudapp.net/TonalService.svc?xsd=xsd1" />
+    <MetadataFile FileName="TonalService1.xsd" MetadataType="Schema" ID="01aff624-a7a5-4e11-a6bb-d5496f8c586f" SourceId="1" SourceUrl="http://psutonalservice.cloudapp.net/TonalService.svc?xsd=xsd0" />
+    <MetadataFile FileName="TonalService.disco" MetadataType="Disco" ID="d1b0786f-8f42-43b0-8fa3-7d7aac264f8e" SourceId="1" SourceUrl="http://psutonalservice.cloudapp.net/TonalService.svc?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

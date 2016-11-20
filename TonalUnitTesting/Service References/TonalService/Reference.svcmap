@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="d0fde372-13e4-49f2-92c0-e86ac38847ee" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="18f64910-e785-492c-a9b9-d2d289670f5f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,9 +22,9 @@
     <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/TonalService/Service1/mex" Protocol="mex" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="90f4b72a-9c1d-404b-ae9c-9a5ab310c227" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/TonalService/Service1/mex" />
-    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="5bc1b4c8-d552-49dc-961d-f26d5c899bb2" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/TonalService/Service1/mex" />
-    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="3e7bffe8-7d1d-4dd1-912e-567f1511aa22" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/TonalService/Service1/mex" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="5d4a7f7f-7835-40ae-a40f-a1e41426fda4" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/TonalService/Service1/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="0d2be3a4-af85-4d97-a66e-c4b575e57122" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/TonalService/Service1/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="e481fcd1-7037-4f12-bf53-a55d51919c68" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/TonalService/Service1/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -14,6 +14,8 @@ namespace ToneAnalyzer
     public partial class ConfigurationRibbon
     {
         DashboardDataAccess _dashboardDatabase;
+        Outlook.MAPIFolder mainFolder;
+        DashboardProgressForm progressForm;
         private void UserConfigurationRibbon_Load(object sender, RibbonUIEventArgs e)
         {
             checkBoxAngerCategory.Checked = Properties.Settings.Default.AngerIncluded;
@@ -51,156 +53,306 @@ namespace ToneAnalyzer
         private void checkBoxAngerCategory_Click(object sender, RibbonControlEventArgs e)
         {
         Properties.Settings.Default.AngerIncluded = checkBoxAngerCategory.Checked;
+            if(!checkBoxAngerCategory.Checked)
+            {
+                Properties.Settings.Default.AngerAlert = false;
+                UserConfigurationRibbon_Load(null, null);
+            }
             Properties.Settings.Default.Save();
         }
 
         private void checkBoxDisgustCategory_Click(object sender, RibbonControlEventArgs e)
         {
             Properties.Settings.Default.DisgustIncluded = checkBoxDisgustCategory.Checked;
+
+            if (!checkBoxDisgustCategory.Checked)
+            {
+                Properties.Settings.Default.DisgustAlert = false;
+                UserConfigurationRibbon_Load(null, null);
+            }
+
             Properties.Settings.Default.Save();
         }
 
         private void checkBoxFearCategory_Click(object sender, RibbonControlEventArgs e)
         {
             Properties.Settings.Default.FearIncluded = checkBoxFearCategory.Checked;
+
+
+            if (!checkBoxFearCategory.Checked)
+            {
+                Properties.Settings.Default.FearAlert = false;
+                UserConfigurationRibbon_Load(null, null);
+            }
+
             Properties.Settings.Default.Save();
         }
 
         private void checkBoxJoyCategory_Click(object sender, RibbonControlEventArgs e)
         {
             Properties.Settings.Default.JoyIncluded = checkBoxJoyCategory.Checked;
+
+            if (!checkBoxJoyCategory.Checked)
+            {
+                Properties.Settings.Default.JoyAlert = false;
+                UserConfigurationRibbon_Load(null, null);
+            }
+
             Properties.Settings.Default.Save();
         }
 
         private void checkBoxSadnessCategory_Click(object sender, RibbonControlEventArgs e)
         {
             Properties.Settings.Default.SadnessIncluded = checkBoxSadnessCategory.Checked;
+
+            if (!checkBoxSadnessCategory.Checked)
+            {
+                Properties.Settings.Default.SadnessAlert = false;
+                UserConfigurationRibbon_Load(null, null);
+            }
+
             Properties.Settings.Default.Save();
         }
 
         private void checkBoxAnalyticalCategory_Click(object sender, RibbonControlEventArgs e)
         {
             Properties.Settings.Default.AnalyticalIncluded = checkBoxAnalyticalCategory.Checked;
+
+            if (!checkBoxAnalyticalCategory.Checked)
+            {
+                Properties.Settings.Default.AnalyticalAlert = false;
+                UserConfigurationRibbon_Load(null, null);
+            }
             Properties.Settings.Default.Save();
         }
 
         private void checkBoxConfidentCategory_Click(object sender, RibbonControlEventArgs e)
         {
             Properties.Settings.Default.ConfidentIncluded = checkBoxConfidentCategory.Checked;
+            if (!checkBoxConfidentCategory.Checked)
+            {
+                Properties.Settings.Default.ConfidentAlert = false;
+                UserConfigurationRibbon_Load(null, null);
+            }
             Properties.Settings.Default.Save();
         }
 
         private void checkBoxTentativeCategory_Click(object sender, RibbonControlEventArgs e)
         {
             Properties.Settings.Default.TentativeIncluded = checkBoxTentativeCategory.Checked;
+            if (!checkBoxTentativeCategory.Checked)
+            {
+                Properties.Settings.Default.TentativeAlert = false;
+                UserConfigurationRibbon_Load(null, null);
+            }
             Properties.Settings.Default.Save();
         }
 
         private void checkBoxOpennessCategory_Click(object sender, RibbonControlEventArgs e)
         {
             Properties.Settings.Default.OpennessIncluded = checkBoxOpennessCategory.Checked;
+            if (!checkBoxOpennessCategory.Checked)
+            {
+                Properties.Settings.Default.OpennessAlert = false;
+                UserConfigurationRibbon_Load(null, null);
+            }
             Properties.Settings.Default.Save();
         }
 
         private void checkBoxConscientiousnessrCategory_Click(object sender, RibbonControlEventArgs e)
         {
             Properties.Settings.Default.ConscientiousnessIncluded = checkBoxConscientiousnessrCategory.Checked;
+            if (!checkBoxConscientiousnessrCategory.Checked)
+            {
+                Properties.Settings.Default.ConscientiousnessAlert = false;
+                UserConfigurationRibbon_Load(null, null);
+            }
             Properties.Settings.Default.Save();
         }
 
         private void checkBoxExtraversionCategory_Click(object sender, RibbonControlEventArgs e)
         {
             Properties.Settings.Default.ExtraversionIncluded = checkBoxExtraversionCategory.Checked;
+            if (!checkBoxExtraversionCategory.Checked)
+            {
+                Properties.Settings.Default.ExtraversionAlert = false;
+                UserConfigurationRibbon_Load(null, null);
+            }
             Properties.Settings.Default.Save();
         }
 
         private void checkBoxAgreeablenessCategory_Click(object sender, RibbonControlEventArgs e)
         {
             Properties.Settings.Default.AgreeablenessIncluded = checkBoxAgreeablenessCategory.Checked;
+            if (!checkBoxAgreeablenessCategory.Checked)
+            {
+                Properties.Settings.Default.AgreeablenessAlert = false;
+                UserConfigurationRibbon_Load(null, null);
+            }
             Properties.Settings.Default.Save();
         }
 
         private void checkBoxERangeCategory_Click(object sender, RibbonControlEventArgs e)
         {
             Properties.Settings.Default.EmotionalRangeIncluded = checkBoxERangeCategory.Checked;
+            if (!checkBoxERangeCategory.Checked)
+            {
+                Properties.Settings.Default.EmotionalRangeAlert = false;
+                UserConfigurationRibbon_Load(null, null);
+            }
             Properties.Settings.Default.Save();
         }
-
+        ///
         private void checkBoxAnger_Click(object sender, RibbonControlEventArgs e)
         {
             Properties.Settings.Default.AngerAlert = checkBoxAnger.Checked;
+            if (checkBoxAnger.Checked)
+            {
+                Properties.Settings.Default.AngerIncluded = true;
+                UserConfigurationRibbon_Load(null, null);
+            }
             Properties.Settings.Default.Save();
         }
 
         private void checkBoxDisgust_Click(object sender, RibbonControlEventArgs e)
         {
             Properties.Settings.Default.DisgustAlert = checkBoxDisgust.Checked;
+            if (checkBoxDisgust.Checked)
+            {
+                Properties.Settings.Default.DisgustIncluded = true;
+                UserConfigurationRibbon_Load(null, null);
+            }
+
             Properties.Settings.Default.Save();
         }
 
         private void checkBoxFear_Click(object sender, RibbonControlEventArgs e)
         {
             Properties.Settings.Default.FearAlert = checkBoxFear.Checked;
+            if (checkBoxFear.Checked)
+            {
+                Properties.Settings.Default.FearIncluded = true;
+                UserConfigurationRibbon_Load(null, null);
+            }
+
             Properties.Settings.Default.Save();
         }
 
         private void checkBoxJoy_Click(object sender, RibbonControlEventArgs e)
         {
             Properties.Settings.Default.JoyAlert = checkBoxJoy.Checked;
+            if (checkBoxJoy.Checked)
+            {
+                Properties.Settings.Default.JoyIncluded = true;
+                UserConfigurationRibbon_Load(null, null);
+            }
+
             Properties.Settings.Default.Save();
         }
 
         private void checkBoxSadness_Click(object sender, RibbonControlEventArgs e)
         {
             Properties.Settings.Default.SadnessAlert = checkBoxSadness.Checked;
+            if (checkBoxSadness.Checked)
+            {
+                Properties.Settings.Default.SadnessIncluded = true;
+                UserConfigurationRibbon_Load(null, null);
+            }
+
             Properties.Settings.Default.Save();
         }
 
         private void checkBoxAnalytical_Click(object sender, RibbonControlEventArgs e)
         {
             Properties.Settings.Default.AnalyticalAlert = checkBoxAnalytical.Checked;
+            if (checkBoxAnalytical.Checked)
+            {
+                Properties.Settings.Default.AnalyticalIncluded = true;
+                UserConfigurationRibbon_Load(null, null);
+            }
+
             Properties.Settings.Default.Save();
         }
 
         private void checkBoxConfident_Click(object sender, RibbonControlEventArgs e)
         {
             Properties.Settings.Default.ConfidentAlert = checkBoxConfident.Checked;
+            if (checkBoxConfident.Checked)
+            {
+                Properties.Settings.Default.ConfidentIncluded = true;
+                UserConfigurationRibbon_Load(null, null);
+            }
+
             Properties.Settings.Default.Save();
         }
 
         private void checkBoxTentative_Click(object sender, RibbonControlEventArgs e)
         {
             Properties.Settings.Default.TentativeAlert = checkBoxTentative.Checked;
+            if (checkBoxTentative.Checked)
+            {
+                Properties.Settings.Default.TentativeIncluded = true;
+                UserConfigurationRibbon_Load(null, null);
+            }
             Properties.Settings.Default.Save();
         }
 
         private void checkBoxOpenness_Click(object sender, RibbonControlEventArgs e)
         {
             Properties.Settings.Default.OpennessAlert = checkBoxOpenness.Checked;
+
+            if (checkBoxOpenness.Checked)
+            {
+                Properties.Settings.Default.OpennessIncluded = true;
+                UserConfigurationRibbon_Load(null, null);
+            }
+
             Properties.Settings.Default.Save();
         }
 
         private void checkBoxConscientiousness_Click(object sender, RibbonControlEventArgs e)
         {
             Properties.Settings.Default.ConscientiousnessAlert  = checkBoxConscientiousness.Checked;
+
+            if (checkBoxConscientiousness.Checked)
+            {
+                Properties.Settings.Default.ConscientiousnessIncluded = true;
+                UserConfigurationRibbon_Load(null, null);
+            }
+
             Properties.Settings.Default.Save();
         }
 
         private void checkBoxExtraversion_Click(object sender, RibbonControlEventArgs e)
         {
             Properties.Settings.Default.ExtraversionAlert = checkBoxExtraversion.Checked;
+            if (checkBoxExtraversion.Checked)
+            {
+                Properties.Settings.Default.ExtraversionIncluded = true;
+                UserConfigurationRibbon_Load(null, null);
+            }
             Properties.Settings.Default.Save();
         }
 
         private void checkBoxAgreeableness_Click(object sender, RibbonControlEventArgs e)
         {
             Properties.Settings.Default.AgreeablenessAlert = checkBoxAgreeableness.Checked;
+            if (checkBoxAgreeableness.Checked)
+            {
+                Properties.Settings.Default.AgreeablenessIncluded = true;
+                UserConfigurationRibbon_Load(null, null);
+            }
             Properties.Settings.Default.Save();
         }
 
         private void checkBoxEmotionalRange_Click(object sender, RibbonControlEventArgs e)
         {
             Properties.Settings.Default.EmotionalRangeAlert = checkBoxEmotionalRange.Checked;
+            if (checkBoxEmotionalRange.Checked)
+            {
+                Properties.Settings.Default.EmotionalRangeIncluded = true;
+                UserConfigurationRibbon_Load(null, null);
+            }
             Properties.Settings.Default.Save();
         }
         private void SetThreshold(string label, double thresholdValue)
@@ -242,6 +394,9 @@ namespace ToneAnalyzer
                     break;
                 case "Emotional Range":
                     Properties.Settings.Default.EmotionalRangeThreshold = thresholdValue;
+                    break;
+                case "Extraversion":
+                    Properties.Settings.Default.ExtraversionThreshold = thresholdValue;
                     break;
 
             }
@@ -285,6 +440,9 @@ namespace ToneAnalyzer
                     break;
                 case "Emotional Range":
                     labelThresholdValue.Label = Properties.Settings.Default.EmotionalRangeThreshold.ToString("N3");
+                    break;
+                case "Extraversion":
+                    labelThresholdValue.Label = Properties.Settings.Default.ExtraversionThreshold.ToString("N3");
                     break;
 
             }
@@ -387,6 +545,7 @@ namespace ToneAnalyzer
 
         private void buttonTonalDashboard_Click(object sender, RibbonControlEventArgs e)
         {
+
            _dashboardDatabase = new DashboardDataAccess();
             _dashboardDatabase.CreateSchema();
             Outlook.Application oApp;
@@ -396,13 +555,38 @@ namespace ToneAnalyzer
             Outlook.MAPIFolder mailsFromThisFolder;
             oNS.Logon(Missing.Value, Missing.Value, false, true);
 
-            Outlook.MAPIFolder mainFolder = oNS.GetDefaultFolder(Outlook.OlDefaultFolders.olFolderInbox);
+            mainFolder = oNS.GetDefaultFolder(Outlook.OlDefaultFolders.olFolderInbox);
+
+            int countEmails = 0;
+            foreach (Object item in mainFolder.Items)
+            {
+                countEmails++;
+            }
+
+            foreach (Outlook.MAPIFolder folder in mainFolder.Folders)
+            {
+                foreach (Object item in folder.Items)
+                {
+                    countEmails++;
+                }
+
+            }
+            progressForm = new DashboardProgressForm(countEmails);
+            progressForm.Show();
+            backgroundWorkerDashboard.RunWorkerAsync();
+
+
+        }
+
+        private void backgroundWorkerDashboard_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
             int emailId = 1;
             foreach (Object item in mainFolder.Items)
             {
                 Outlook.MailItem mailItem = (Outlook.MailItem)item;
                 AddItemToDashboard("Inbox", mailItem, emailId);
                 emailId++;
+                backgroundWorkerDashboard.ReportProgress(1);
             }
 
             foreach (Outlook.MAPIFolder folder in mainFolder.Folders)
@@ -412,13 +596,24 @@ namespace ToneAnalyzer
                     Outlook.MailItem mailItem = (Outlook.MailItem)item;
                     AddItemToDashboard(folder.Name, mailItem, emailId);
                     emailId++;
+                    backgroundWorkerDashboard.ReportProgress(1);
                 }
 
             }
+
+        }
+
+        private void backgroundWorkerDashboard_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
+        {
             _dashboardDatabase.Close();
             MessageDashboard dashboard = new MessageDashboard(_dashboardDatabase.FileName);
+            progressForm.Close();
             dashboard.ShowDialog();
         }
 
+        private void backgroundWorkerDashboard_ProgressChanged(object sender, System.ComponentModel.ProgressChangedEventArgs e)
+        {
+            progressForm.Step();
         }
+    }
     }
