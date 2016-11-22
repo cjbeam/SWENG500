@@ -17,8 +17,9 @@ namespace ToneAnalyzer
     {
         public MessageDashboard(string fileName)
         {
-            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "EmailDashboard.xml");
-            string xml = File.ReadAllText(path);
+            //   string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "EmailDashboard.xml");
+            //    string xml = File.ReadAllText(path);
+            string xml = Properties.Settings.Default.Dashboard;
             xml = xml.Replace("[Dashboard Location]", fileName);
             Stream xmlStream = new MemoryStream(Encoding.UTF8.GetBytes(xml ?? ""));
             InitializeComponent();

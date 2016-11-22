@@ -502,5 +502,209 @@ namespace ToneAnalyzer.Properties {
                 this["EmailAddress"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<Dashboard CurrencyCulture=\"en-US\">\r\n  <T" +
+            "itle Visible=\"false\" Text=\"Message Dashboard\" />\r\n  <DataSources>\r\n    <SqlDataS" +
+            "ource ComponentName=\"dashboardSqlDataSource1\">\r\n      <Name>SQL Data Source 1</N" +
+            "ame>\r\n      <Connection Name=\"dashboard\" ProviderKey=\"SQLite\">\r\n        <Paramet" +
+            "ers>\r\n          <Parameter Name=\"database\" Value=\"[Dashboard Location]\" />\r\n    " +
+            "      <Parameter Name=\"read only\" Value=\"1\" />\r\n          <Parameter Name=\"gener" +
+            "ateConnectionHelper\" Value=\"false\" />\r\n          <Parameter Name=\"password\" Valu" +
+            "e=\"\" />\r\n        </Parameters>\r\n      </Connection>\r\n      <Query Type=\"SelectQu" +
+            "ery\" Name=\"Email\">\r\n        <Tables>\r\n          <Table Name=\"Email\" Meta=\"30|30|" +
+            "125|200\" />\r\n          <Table Name=\"Body_Analysis\" Meta=\"185|30|125|120\" />\r\n   " +
+            "       <Relation Type=\"Inner\" Parent=\"Email\" Nested=\"Body_Analysis\">\r\n          " +
+            "  <KeyColumn Parent=\"Email_Id\" Nested=\"Email_Id\" />\r\n          </Relation>\r\n    " +
+            "    </Tables>\r\n        <Columns>\r\n          <Column Table=\"Email\" Name=\"Folder\" " +
+            "/>\r\n          <Column Table=\"Email\" Name=\"Subject\" />\r\n          <Column Table=\"" +
+            "Email\" Name=\"Received\" />\r\n          <Column Table=\"Email\" Name=\"Importance\" />\r" +
+            "\n          <Column Table=\"Email\" Name=\"Read_Receipt\" />\r\n          <Column Table" +
+            "=\"Email\" Name=\"SenderName\" />\r\n          <Column Table=\"Email\" Name=\"SenderEmail" +
+            "Address\" />\r\n          <Column Table=\"Body_Analysis\" Name=\"Category\" />\r\n       " +
+            "   <Column Table=\"Body_Analysis\" Name=\"Tone_Name\" />\r\n          <Column Table=\"B" +
+            "ody_Analysis\" Name=\"Score\" />\r\n          <Column Table=\"Email\" Name=\"Email_Id\" /" +
+            ">\r\n        </Columns>\r\n      </Query>\r\n      <ResultSchema>\r\n        <DataSet Na" +
+            "me=\"SQL Data Source 1\">\r\n          <View Name=\"Email\">\r\n            <Field Name=" +
+            "\"Folder\" Type=\"String\" />\r\n            <Field Name=\"Subject\" Type=\"String\" />\r\n " +
+            "           <Field Name=\"Received\" Type=\"DateTime\" />\r\n            <Field Name=\"I" +
+            "mportance\" Type=\"String\" />\r\n            <Field Name=\"Read_Receipt\" Type=\"Boolea" +
+            "n\" />\r\n            <Field Name=\"SenderName\" Type=\"String\" />\r\n            <Field" +
+            " Name=\"SenderEmailAddress\" Type=\"String\" />\r\n            <Field Name=\"Category\" " +
+            "Type=\"String\" />\r\n            <Field Name=\"Tone_Name\" Type=\"String\" />\r\n        " +
+            "    <Field Name=\"Score\" Type=\"Double\" />\r\n            <Field Name=\"Email_Id\" Typ" +
+            "e=\"Int64\" />\r\n          </View>\r\n        </DataSet>\r\n      </ResultSchema>\r\n    " +
+            "  <ConnectionOptions CloseConnection=\"true\" CommandTimeout=\"0\" />\r\n    </SqlData" +
+            "Source>\r\n  </DataSources>\r\n  <Items>\r\n    <Chart ComponentName=\"chartDashboardIt" +
+            "em1\" Name=\"Emotion\" DataSource=\"dashboardSqlDataSource1\" DataMember=\"Email\" Filt" +
+            "erString=\"[DataItem2] = \'emotion_tone\'\">\r\n      <InteractivityOptions MasterFilt" +
+            "erMode=\"Multiple\" />\r\n      <DataItems>\r\n        <Dimension DataMember=\"Tone_Nam" +
+            "e\" SortOrder=\"Descending\" SortByMeasure=\"DataItem1\" UniqueName=\"DataItem0\" />\r\n " +
+            "       <Measure DataMember=\"Score\" Name=\"Score\" SummaryType=\"Average\" UniqueName" +
+            "=\"DataItem1\" />\r\n        <Dimension DataMember=\"Category\" UniqueName=\"DataItem2\"" +
+            " />\r\n      </DataItems>\r\n      <HiddenDimensions>\r\n        <Dimension UniqueName" +
+            "=\"DataItem2\" />\r\n      </HiddenDimensions>\r\n      <Arguments>\r\n        <Argument" +
+            " UniqueName=\"DataItem0\" />\r\n      </Arguments>\r\n      <Panes>\r\n        <Pane Nam" +
+            "e=\"Pane 1\">\r\n          <Series>\r\n            <Simple Name=\"Average Score\">\r\n    " +
+            "          <Value UniqueName=\"DataItem1\" />\r\n            </Simple>\r\n          </S" +
+            "eries>\r\n        </Pane>\r\n      </Panes>\r\n    </Chart>\r\n    <Chart ComponentName=" +
+            "\"chartDashboardItem2\" Name=\"Language\" DataSource=\"dashboardSqlDataSource1\" DataM" +
+            "ember=\"Email\" FilterString=\"[DataItem2] = \'language_tone\'\">\r\n      <Interactivit" +
+            "yOptions MasterFilterMode=\"Multiple\" />\r\n      <DataItems>\r\n        <Dimension D" +
+            "ataMember=\"Tone_Name\" SortOrder=\"Descending\" SortByMeasure=\"DataItem1\" UniqueNam" +
+            "e=\"DataItem0\" />\r\n        <Measure DataMember=\"Score\" Name=\"Score\" SummaryType=\"" +
+            "Average\" UniqueName=\"DataItem1\" />\r\n        <Dimension DataMember=\"Category\" Uni" +
+            "queName=\"DataItem2\" />\r\n      </DataItems>\r\n      <HiddenDimensions>\r\n        <D" +
+            "imension UniqueName=\"DataItem2\" />\r\n      </HiddenDimensions>\r\n      <Arguments>" +
+            "\r\n        <Argument UniqueName=\"DataItem0\" />\r\n      </Arguments>\r\n      <Panes>" +
+            "\r\n        <Pane Name=\"Pane 1\">\r\n          <Series>\r\n            <Simple Name=\"Av" +
+            "erage Score\">\r\n              <Value UniqueName=\"DataItem1\" />\r\n            </Sim" +
+            "ple>\r\n          </Series>\r\n        </Pane>\r\n      </Panes>\r\n    </Chart>\r\n    <C" +
+            "hart ComponentName=\"chartDashboardItem3\" Name=\"Social Tone\" DataSource=\"dashboar" +
+            "dSqlDataSource1\" DataMember=\"Email\" FilterString=\"[DataItem0] = \'social_tone\'\">\r" +
+            "\n      <ColoringOptions MeasuresColoringMode=\"Hue\" UseGlobalColors=\"false\" />\r\n " +
+            "     <InteractivityOptions MasterFilterMode=\"Multiple\" />\r\n      <DataItems>\r\n  " +
+            "      <Dimension DataMember=\"Category\" UniqueName=\"DataItem0\" />\r\n        <Dimen" +
+            "sion DataMember=\"Tone_Name\" SortOrder=\"Descending\" SortByMeasure=\"DataItem2\" Uni" +
+            "queName=\"DataItem1\" />\r\n        <Measure DataMember=\"Score\" Name=\"Score\" Summary" +
+            "Type=\"Average\" UniqueName=\"DataItem2\" />\r\n      </DataItems>\r\n      <HiddenDimen" +
+            "sions>\r\n        <Dimension UniqueName=\"DataItem0\" />\r\n      </HiddenDimensions>\r" +
+            "\n      <Arguments>\r\n        <Argument UniqueName=\"DataItem1\" />\r\n      </Argumen" +
+            "ts>\r\n      <ColorScheme>\r\n        <Entry DataSource=\"dashboardSqlDataSource1\" Da" +
+            "taMember=\"Email\" Color=\"-4567727\">\r\n          <DimensionKeys>\r\n            <Dime" +
+            "nsionKey>\r\n              <Definition DataMember=\"Category\" />\r\n              <Va" +
+            "lue Type=\"System.String\" Value=\"Anger\" />\r\n            </DimensionKey>\r\n        " +
+            "  </DimensionKeys>\r\n        </Entry>\r\n      </ColorScheme>\r\n      <Panes>\r\n     " +
+            "   <Pane Name=\"Pane 1\">\r\n          <Series>\r\n            <Simple>\r\n             " +
+            " <Value UniqueName=\"DataItem2\" />\r\n            </Simple>\r\n          </Series>\r\n " +
+            "       </Pane>\r\n      </Panes>\r\n    </Chart>\r\n    <TreeView ComponentName=\"treeV" +
+            "iewDashboardItem1\" Name=\"Messages\" DataSource=\"dashboardSqlDataSource1\" DataMemb" +
+            "er=\"Email\">\r\n      <DataItems>\r\n        <Dimension DataMember=\"Folder\" UniqueNam" +
+            "e=\"DataItem0\" />\r\n        <Dimension DataMember=\"SenderEmailAddress\" UniqueName=" +
+            "\"DataItem1\" />\r\n        <Dimension DataMember=\"Subject\" UniqueName=\"DataItem2\" /" +
+            ">\r\n      </DataItems>\r\n      <FilterDimensions>\r\n        <Dimension UniqueName=\"" +
+            "DataItem0\" />\r\n        <Dimension UniqueName=\"DataItem1\" />\r\n        <Dimension " +
+            "UniqueName=\"DataItem2\" />\r\n      </FilterDimensions>\r\n    </TreeView>\r\n    <Pie " +
+            "ComponentName=\"pieDashboardItem1\" Name=\"Read Receipt\" DataSource=\"dashboardSqlDa" +
+            "taSource1\" DataMember=\"Email\" LabelContentType=\"ArgumentAndValue\" TooltipContent" +
+            "Type=\"ArgumentAndValue\" ShowPieCaptions=\"false\">\r\n      <InteractivityOptions Ma" +
+            "sterFilterMode=\"Multiple\" />\r\n      <DataItems>\r\n        <Dimension DataMember=\"" +
+            "Read_Receipt\" UniqueName=\"DataItem0\" />\r\n        <Measure DataMember=\"Email_Id\" " +
+            "Name=\"Read Receipt\" SummaryType=\"CountDistinct\" UniqueName=\"DataItem1\" />\r\n     " +
+            " </DataItems>\r\n      <Arguments>\r\n        <Argument UniqueName=\"DataItem0\" />\r\n " +
+            "     </Arguments>\r\n      <Values>\r\n        <Value UniqueName=\"DataItem1\" />\r\n   " +
+            "   </Values>\r\n    </Pie>\r\n    <Pie ComponentName=\"pieDashboardItem2\" Name=\"Impor" +
+            "tance\" DataSource=\"dashboardSqlDataSource1\" DataMember=\"Email\" LabelContentType=" +
+            "\"ArgumentAndValue\" TooltipContentType=\"ArgumentAndValue\" ShowPieCaptions=\"false\"" +
+            ">\r\n      <InteractivityOptions MasterFilterMode=\"Multiple\" />\r\n      <DataItems>" +
+            "\r\n        <Measure DataMember=\"Email_Id\" Name=\"Importance\" SummaryType=\"CountDis" +
+            "tinct\" UniqueName=\"DataItem1\" />\r\n        <Dimension DataMember=\"Importance\" Uni" +
+            "queName=\"DataItem0\" />\r\n      </DataItems>\r\n      <Arguments>\r\n        <Argument" +
+            " UniqueName=\"DataItem0\" />\r\n      </Arguments>\r\n      <Values>\r\n        <Value U" +
+            "niqueName=\"DataItem1\" />\r\n      </Values>\r\n    </Pie>\r\n    <Chart ComponentName=" +
+            "\"chartDashboardItem4\" Name=\"Top 5 Most Joyful Email Addresses\" DataSource=\"dashb" +
+            "oardSqlDataSource1\" DataMember=\"Email\" FilterString=\"[DataItem2] = \'Joy\'\">\r\n    " +
+            "  <ColoringOptions UseGlobalColors=\"false\" />\r\n      <InteractivityOptions Maste" +
+            "rFilterMode=\"Multiple\" />\r\n      <DataItems>\r\n        <Measure DataMember=\"Score" +
+            "\" Name=\"Score\" SummaryType=\"Average\" UniqueName=\"DataItem1\" />\r\n        <Dimensi" +
+            "on DataMember=\"Tone_Name\" UniqueName=\"DataItem2\" />\r\n        <Dimension DataMemb" +
+            "er=\"SenderEmailAddress\" SortOrder=\"Descending\" TopNEnabled=\"true\" TopNMeasure=\"D" +
+            "ataItem1\" UniqueName=\"DataItem0\" />\r\n        <Measure DataMember=\"Email_Id\" Name" +
+            "=\"Message Count\" SummaryType=\"CountDistinct\" UniqueName=\"DataItem3\" />\r\n      </" +
+            "DataItems>\r\n      <HiddenDimensions>\r\n        <Dimension UniqueName=\"DataItem2\" " +
+            "/>\r\n      </HiddenDimensions>\r\n      <Arguments>\r\n        <Argument UniqueName=\"" +
+            "DataItem0\" />\r\n      </Arguments>\r\n      <Panes>\r\n        <Pane Name=\"Pane 1\">\r\n" +
+            "          <Series>\r\n            <Simple>\r\n              <Value UniqueName=\"DataI" +
+            "tem1\" />\r\n            </Simple>\r\n            <Simple PlotOnSecondaryAxis=\"true\" " +
+            "SeriesType=\"Line\">\r\n              <Value UniqueName=\"DataItem3\" />\r\n            " +
+            "</Simple>\r\n          </Series>\r\n        </Pane>\r\n      </Panes>\r\n    </Chart>\r\n " +
+            "   <Chart ComponentName=\"chartDashboardItem5\" Name=\"Top 5 Most Angry Email Addre" +
+            "sses\" DataSource=\"dashboardSqlDataSource1\" DataMember=\"Email\" FilterString=\"[Dat" +
+            "aItem2] = \'Anger\'\">\r\n      <InteractivityOptions MasterFilterMode=\"Multiple\" />\r" +
+            "\n      <DataItems>\r\n        <Dimension DataMember=\"SenderEmailAddress\" SortOrder" +
+            "=\"Descending\" TopNEnabled=\"true\" TopNMeasure=\"DataItem1\" UniqueName=\"DataItem0\" " +
+            "/>\r\n        <Measure DataMember=\"Score\" Name=\"Score\" SummaryType=\"Average\" Uniqu" +
+            "eName=\"DataItem1\" />\r\n        <Dimension DataMember=\"Tone_Name\" UniqueName=\"Data" +
+            "Item2\" />\r\n        <Measure DataMember=\"Email_Id\" Name=\"Message Count\" SummaryTy" +
+            "pe=\"CountDistinct\" UniqueName=\"DataItem3\" />\r\n      </DataItems>\r\n      <HiddenD" +
+            "imensions>\r\n        <Dimension UniqueName=\"DataItem2\" />\r\n      </HiddenDimensio" +
+            "ns>\r\n      <Arguments>\r\n        <Argument UniqueName=\"DataItem0\" />\r\n      </Arg" +
+            "uments>\r\n      <Panes>\r\n        <Pane Name=\"Pane 1\">\r\n          <Series>\r\n      " +
+            "      <Simple>\r\n              <Value UniqueName=\"DataItem1\" />\r\n            </Si" +
+            "mple>\r\n            <Simple PlotOnSecondaryAxis=\"true\" SeriesType=\"Line\">\r\n      " +
+            "        <Value UniqueName=\"DataItem3\" />\r\n            </Simple>\r\n          </Ser" +
+            "ies>\r\n        </Pane>\r\n      </Panes>\r\n    </Chart>\r\n    <Grid ComponentName=\"gr" +
+            "idDashboardItem1\" Name=\"Message Score Details\" DataSource=\"dashboardSqlDataSourc" +
+            "e1\" DataMember=\"Email\">\r\n      <DataItems>\r\n        <Dimension DataMember=\"Sende" +
+            "rName\" UniqueName=\"DataItem0\" />\r\n        <Dimension DataMember=\"Subject\" Unique" +
+            "Name=\"DataItem1\" />\r\n        <Dimension DataMember=\"Tone_Name\" UniqueName=\"DataI" +
+            "tem3\" />\r\n        <Measure DataMember=\"Score\" UniqueName=\"DataItem4\" />\r\n       " +
+            " <Dimension DataMember=\"Importance\" UniqueName=\"DataItem6\" />\r\n        <Dimensio" +
+            "n DataMember=\"Received\" DateTimeGroupInterval=\"DateHourMinute\" UniqueName=\"DataI" +
+            "tem7\" />\r\n      </DataItems>\r\n      <GridColumns>\r\n        <GridDimensionColumn " +
+            "Weight=\"60.037290242386575\">\r\n          <Dimension UniqueName=\"DataItem0\" />\r\n  " +
+            "      </GridDimensionColumn>\r\n        <GridDimensionColumn Weight=\"114.527656929" +
+            "77005\">\r\n          <Dimension UniqueName=\"DataItem1\" />\r\n        </GridDimension" +
+            "Column>\r\n        <GridDimensionColumn Name=\"Received\" Weight=\"82.877563704164075" +
+            "\">\r\n          <Dimension UniqueName=\"DataItem7\" />\r\n        </GridDimensionColum" +
+            "n>\r\n        <GridDimensionColumn Weight=\"95.602858918582967\">\r\n          <Dimens" +
+            "ion UniqueName=\"DataItem6\" />\r\n        </GridDimensionColumn>\r\n        <GridDime" +
+            "nsionColumn Name=\"Tone \" Weight=\"61.995027967681793\">\r\n          <Dimension Uniq" +
+            "ueName=\"DataItem3\" />\r\n        </GridDimensionColumn>\r\n        <GridMeasureColum" +
+            "n Name=\"Score\" Weight=\"58.079552517091358\">\r\n          <Measure UniqueName=\"Data" +
+            "Item4\" />\r\n        </GridMeasureColumn>\r\n      </GridColumns>\r\n      <GridOption" +
+            "s ColumnWidthMode=\"Manual\" />\r\n    </Grid>\r\n    <RangeFilter ComponentName=\"rang" +
+            "eFilterDashboardItem1\" Name=\"Messages Received By Date\" ShowCaption=\"true\" DataS" +
+            "ource=\"dashboardSqlDataSource1\" DataMember=\"Email\">\r\n      <DataItems>\r\n        " +
+            "<Dimension DataMember=\"Received\" DateTimeGroupInterval=\"DayMonthYear\" UniqueName" +
+            "=\"DataItem0\" />\r\n        <Measure DataMember=\"Email_Id\" SummaryType=\"CountDistin" +
+            "ct\" UniqueName=\"DataItem1\" />\r\n        <Dimension DataMember=\"SenderName\" Unique" +
+            "Name=\"DataItem3\" />\r\n      </DataItems>\r\n      <SeriesDimensions>\r\n        <Seri" +
+            "esDimension UniqueName=\"DataItem3\" />\r\n      </SeriesDimensions>\r\n      <Argumen" +
+            "t UniqueName=\"DataItem0\" />\r\n      <Series>\r\n        <Simple SeriesType=\"Line\">\r" +
+            "\n          <Value UniqueName=\"DataItem1\" />\r\n        </Simple>\r\n      </Series>\r" +
+            "\n    </RangeFilter>\r\n  </Items>\r\n  <ColorScheme>\r\n    <Entry DataSource=\"dashboa" +
+            "rdSqlDataSource1\" DataMember=\"Email\" Color=\"-11309378\">\r\n      <DimensionKeys>\r\n" +
+            "        <DimensionKey>\r\n          <Definition DataMember=\"Read_Receipt\" />\r\n    " +
+            "      <Value Type=\"System.Boolean\" Value=\"False\" />\r\n        </DimensionKey>\r\n  " +
+            "    </DimensionKeys>\r\n    </Entry>\r\n    <Entry DataSource=\"dashboardSqlDataSourc" +
+            "e1\" DataMember=\"Email\" Color=\"-1857965\">\r\n      <DimensionKeys>\r\n        <Dimens" +
+            "ionKey>\r\n          <Definition DataMember=\"Read_Receipt\" />\r\n          <Value Ty" +
+            "pe=\"System.Boolean\" Value=\"True\" />\r\n        </DimensionKey>\r\n      </DimensionK" +
+            "eys>\r\n    </Entry>\r\n    <Entry DataSource=\"dashboardSqlDataSource1\" DataMember=\"" +
+            "Email\" Color=\"-11886166\">\r\n      <DimensionKeys>\r\n        <DimensionKey>\r\n      " +
+            "    <Definition DataMember=\"Importance\" />\r\n          <Value Type=\"System.String" +
+            "\" Value=\"High\" />\r\n        </DimensionKey>\r\n      </DimensionKeys>\r\n    </Entry>" +
+            "\r\n    <Entry DataSource=\"dashboardSqlDataSource1\" DataMember=\"Email\" Color=\"-185" +
+            "7965\">\r\n      <DimensionKeys>\r\n        <DimensionKey>\r\n          <Definition Dat" +
+            "aMember=\"Importance\" />\r\n          <Value Type=\"System.String\" Value=\"Low\" />\r\n " +
+            "       </DimensionKey>\r\n      </DimensionKeys>\r\n    </Entry>\r\n    <Entry DataSou" +
+            "rce=\"dashboardSqlDataSource1\" DataMember=\"Email\" Color=\"-11309378\">\r\n      <Dime" +
+            "nsionKeys>\r\n        <DimensionKey>\r\n          <Definition DataMember=\"Importance" +
+            "\" />\r\n          <Value Type=\"System.String\" Value=\"Normal\" />\r\n        </Dimensi" +
+            "onKey>\r\n      </DimensionKeys>\r\n    </Entry>\r\n  </ColorScheme>\r\n  <LayoutTree>\r\n" +
+            "    <LayoutGroup>\r\n      <LayoutGroup Orientation=\"Vertical\" Weight=\"19.35180836" +
+            "073274\">\r\n        <LayoutItem DashboardItem=\"treeViewDashboardItem1\" Weight=\"35." +
+            "139573070607554\" />\r\n        <LayoutItem DashboardItem=\"pieDashboardItem2\" Weigh" +
+            "t=\"31.03448275862069\" />\r\n        <LayoutItem DashboardItem=\"pieDashboardItem1\" " +
+            "Weight=\"33.825944170771756\" />\r\n      </LayoutGroup>\r\n      <LayoutGroup Orienta" +
+            "tion=\"Vertical\" Weight=\"80.648191639267267\">\r\n        <LayoutItem DashboardItem=" +
+            "\"rangeFilterDashboardItem1\" Weight=\"16.502463054187192\" />\r\n        <LayoutGroup" +
+            " Weight=\"32.430213464696223\">\r\n          <LayoutItem DashboardItem=\"chartDashboa" +
+            "rdItem3\" Weight=\"32.67326732673267\" />\r\n          <LayoutItem DashboardItem=\"cha" +
+            "rtDashboardItem1\" Weight=\"29.761211415259172\" />\r\n          <LayoutItem Dashboar" +
+            "dItem=\"chartDashboardItem2\" Weight=\"37.565521258008154\" />\r\n        </LayoutGrou" +
+            "p>\r\n        <LayoutGroup Weight=\"30.459770114942529\">\r\n          <LayoutItem Das" +
+            "hboardItem=\"chartDashboardItem4\" Weight=\"48.980780430984275\" />\r\n          <Layo" +
+            "utItem DashboardItem=\"chartDashboardItem5\" Weight=\"51.019219569015725\" />\r\n     " +
+            "   </LayoutGroup>\r\n        <LayoutItem DashboardItem=\"gridDashboardItem1\" Weight" +
+            "=\"20.607553366174056\" />\r\n      </LayoutGroup>\r\n    </LayoutGroup>\r\n  </LayoutTr" +
+            "ee>\r\n</Dashboard>")]
+        public string Dashboard {
+            get {
+                return ((string)(this["Dashboard"]));
+            }
+        }
     }
 }

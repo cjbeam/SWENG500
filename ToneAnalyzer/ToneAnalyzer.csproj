@@ -33,10 +33,10 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <PublishUrl>publish\</PublishUrl>
+    <PublishUrl>C:\Users\DARREN\Desktop\Install\</PublishUrl>
     <InstallUrl />
     <TargetCulture>en</TargetCulture>
-    <ApplicationVersion>2.0.0.3</ApplicationVersion>
+    <ApplicationVersion>2.0.0.11</ApplicationVersion>
     <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateInterval>7</UpdateInterval>
@@ -391,6 +391,12 @@
     can be found.
   -->
   <ItemGroup>
+    <Compile Include="AnalysisProgressForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AnalysisProgressForm.Designer.cs">
+      <DependentUpon>AnalysisProgressForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AnalyzeRibbon.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -422,6 +428,9 @@
     <Compile Include="ConfigurationRibbon.Designer.cs">
       <DependentUpon>ConfigurationRibbon.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AnalysisProgressForm.resx">
+      <DependentUpon>AnalysisProgressForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AnalyzeRibbon.resx">
       <DependentUpon>AnalyzeRibbon.cs</DependentUpon>
     </EmbeddedResource>
@@ -517,6 +526,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="EmailDashboard.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x64\SQLite.Interop.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x86\SQLite.Interop.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="Service References\RemoteTonalService\Reference.svcmap">

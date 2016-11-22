@@ -16,8 +16,7 @@ namespace ToneAnalyzer
         private EmailAnalysis _emailAnalysis;
         private string _messageHtml;
         private Microsoft.Office.Interop.Outlook.MailItem _currentMailItem;
-
-
+        AnalysisProgressForm progressForm;
         private void AnalyzeRibbon_Load(object sender, RibbonUIEventArgs e)
         {
 
@@ -26,41 +25,13 @@ namespace ToneAnalyzer
 
         private void AnalyzeTone_Click(object sender, RibbonControlEventArgs e)
         {
-            var currentInspector =
-                  this.Context as Microsoft.Office.Interop.Outlook.Inspector;
-            if (currentInspector == null)
-            {
-                return;
-            }
-            _currentMailItem = currentInspector.CurrentItem as Microsoft.Office.Interop.Outlook.MailItem;
-            _messageHtml = _currentMailItem.HTMLBody;
+            progressForm = new AnalysisProgressForm();
+            progressForm.Show();
+            resultsGroup.Visible = false;
+            buttonAnalyzeMessage.Enabled = false;
+            backgroundWorkerAnalyze.RunWorkerAsync();
 
-            resultsGroup.Visible = true;
-            var service = new RemoteTonalService.TonalServiceClient();
-            if (_currentMailItem == null) return;
-            string json="";
-            try
-            {
-                string email = Properties.Settings.Default.EmailAddress;
-                json = service.GetAnalysis(email, _currentMailItem.Body, "ToneAnalyzerUserName", "ToneAnalyzerPassword");
 
-                try
-                {
-                    _emailAnalysis = JsonConvert.DeserializeObject<EmailAnalysis>(json);
-                }
-                catch (System.Exception ex)
-                {
-                   MessageBox.Show(json, "Unable to Analyze Message");
-                    resultsGroup.Visible = false;
-                    return;
-                }
-
-            RenderGauges(_emailAnalysis);
-            }
-            catch(System.Exception exception)
-            {
-                    MessageBox.Show(exception.Message, "Unable to Analyze Message");
-                }
         }
        
         private void RenderGauges(EmailAnalysis analysis)
@@ -150,6 +121,60 @@ namespace ToneAnalyzer
         private void socialResultsgallery_Click(object sender, RibbonControlEventArgs e)
         {
             ViewSentences(sender);
+        }
+
+        private void backgroundWorkerAnalyze_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+
+            var currentInspector =
+      this.Context as Microsoft.Office.Interop.Outlook.Inspector;
+            if (currentInspector == null)
+            {
+                return;
+            }
+            _currentMailItem = currentInspector.CurrentItem as Microsoft.Office.Interop.Outlook.MailItem;
+            _messageHtml = _currentMailItem.HTMLBody;
+
+
+            var service = new RemoteTonalService.TonalServiceClient();
+            if (_currentMailItem == null) return;
+            string json = "";
+            try
+            {
+                string email = Properties.Settings.Default.EmailAddress;
+                json = service.GetAnalysis(email, _currentMailItem.Body, "ToneAnalyzerUserName", "ToneAnalyzerPassword");
+
+                try
+                {
+                    _emailAnalysis = JsonConvert.DeserializeObject<EmailAnalysis>(json);
+                }
+                catch (System.Exception ex)
+                {
+                    MessageBox.Show(json, "Unable to Analyze Message");
+                    resultsGroup.Visible = false;
+                    return;
+                }
+
+
+            }
+            catch (System.Exception exception)
+            {
+                MessageBox.Show(exception.Message, "Unable to Analyze Message");
+            }
+        }
+        public void HideProgress()
+        {
+           
+        }
+        private void backgroundWorkerAnalyze_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
+        {
+
+
+   
+            resultsGroup.Visible = true;
+            buttonAnalyzeMessage.Enabled = true;
+            RenderGauges(_emailAnalysis);
+            progressForm.Close();
         }
     }
 }

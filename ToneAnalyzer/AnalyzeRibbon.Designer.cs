@@ -41,6 +41,7 @@
             this.resultsGroup = this.Factory.CreateRibbonGroup();
             this.separator3 = this.Factory.CreateRibbonSeparator();
             this.separator2 = this.Factory.CreateRibbonSeparator();
+            this.backgroundWorkerAnalyze = new System.ComponentModel.BackgroundWorker();
             this.buttonAnalyzeMessage = this.Factory.CreateRibbonButton();
             this.socialResultsgallery = this.Factory.CreateRibbonGallery();
             this.languageResultsgallery = this.Factory.CreateRibbonGallery();
@@ -82,6 +83,11 @@
             // separator2
             // 
             this.separator2.Name = "separator2";
+            // 
+            // backgroundWorkerAnalyze
+            // 
+            this.backgroundWorkerAnalyze.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerAnalyze_DoWork);
+            this.backgroundWorkerAnalyze.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorkerAnalyze_RunWorkerCompleted);
             // 
             // buttonAnalyzeMessage
             // 
@@ -156,6 +162,7 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonGallery socialResultsgallery;
         internal Microsoft.Office.Tools.Ribbon.RibbonSeparator separator3;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup resultsGroup;
+        private System.ComponentModel.BackgroundWorker backgroundWorkerAnalyze;
     }
 
     partial class ThisRibbonCollection
