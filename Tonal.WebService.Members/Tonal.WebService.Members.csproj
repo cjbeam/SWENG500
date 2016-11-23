@@ -107,6 +107,15 @@
   <ItemGroup>
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\Analysis\Education\Tone\EmotionController.cs" />
+    <Compile Include="Controllers\Analysis\Education\Tone\LanguageController.cs" />
+    <Compile Include="Controllers\Analysis\Education\Tone\SocialController.cs" />
+    <Compile Include="Controllers\Analysis\Gender\Tone\EmotionController.cs" />
+    <Compile Include="Controllers\Analysis\Gender\Tone\LanguageController.cs" />
+    <Compile Include="Controllers\Analysis\Gender\Tone\SocialController.cs" />
+    <Compile Include="Controllers\Analysis\State\Tone\EmotionController.cs" />
+    <Compile Include="Controllers\Analysis\State\Tone\LanguageController.cs" />
+    <Compile Include="Controllers\Analysis\State\Tone\SocialController.cs" />
     <Compile Include="Controllers\EducationLevelsController.cs" />
     <Compile Include="Controllers\GenderOptionsController.cs" />
     <Compile Include="Controllers\RegistrationController.cs" />

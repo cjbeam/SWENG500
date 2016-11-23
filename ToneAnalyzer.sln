@@ -26,6 +26,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDatasetLoader", "TestDa
 		{8464A9E6-235E-458B-9FAB-7FD4093E81ED} = {8464A9E6-235E-458B-9FAB-7FD4093E81ED}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tonal.WebService.Members", "Tonal.WebService.Members\Tonal.WebService.Members.csproj", "{AC8052C1-93E1-45CA-8E35-B9F898C76727}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tonal.WebService.Members.Tests", "Tonal.WebService.Members.Tests\Tonal.WebService.Members.Tests.csproj", "{9FEE51E0-1411-4E34-954C-CD1CE62FDF27}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -72,6 +76,14 @@ Global
 		{C0E52D13-0E62-4180-88B4-571A86C718D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0E52D13-0E62-4180-88B4-571A86C718D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0E52D13-0E62-4180-88B4-571A86C718D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC8052C1-93E1-45CA-8E35-B9F898C76727}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC8052C1-93E1-45CA-8E35-B9F898C76727}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC8052C1-93E1-45CA-8E35-B9F898C76727}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC8052C1-93E1-45CA-8E35-B9F898C76727}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FEE51E0-1411-4E34-954C-CD1CE62FDF27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FEE51E0-1411-4E34-954C-CD1CE62FDF27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FEE51E0-1411-4E34-954C-CD1CE62FDF27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FEE51E0-1411-4E34-954C-CD1CE62FDF27}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
