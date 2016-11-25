@@ -5,12 +5,15 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using Tonal.Model;
 
 namespace Tonal.WebService.Members.Controllers.Analysis.Education.Tone
 {
+    [System.Web.Http.Cors.EnableCors("*", "*", "*")]
     public class EducationEmotionController : ApiController
     {
+        [EnableCors("*", "*", "*")]
         [Route("api/education/emotion")]
         public IHttpActionResult Get()
         {

@@ -7,7 +7,9 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using Tonal.Model;
 
-namespace Tonal.WebService.Members.Controllers {
+namespace Tonal.WebService.Members.Controllers
+{
+    [System.Web.Http.Cors.EnableCors("*", "*", "*")]
     public class RegistrationController : ApiController {
         //public IHttpActionResult Get(Tonal.Model.Registration registration) {
         //    IHttpActionResult actionResult;
@@ -30,6 +32,7 @@ namespace Tonal.WebService.Members.Controllers {
         //    return actionResult;
         //}
 
+        [System.Web.Http.Cors.EnableCors("*", "*", "*")]
         public IHttpActionResult Get(string email, string birthDate, int genderId, int educationId, int stateId) {
             IHttpActionResult actionResult;
 

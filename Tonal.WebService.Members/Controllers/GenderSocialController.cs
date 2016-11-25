@@ -7,8 +7,10 @@ using System.Web.Http;
 
 namespace Tonal.WebService.Members.Controllers.Analysis.Gender.Tone
 {
+    [System.Web.Http.Cors.EnableCors("*", "*", "*")]
     public class GenderSocialController : ApiController
     {
+        [System.Web.Http.Cors.EnableCors("*", "*", "*")]
         [Route("api/gender/social")]
         public IHttpActionResult Get()
         {

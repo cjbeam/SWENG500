@@ -7,8 +7,10 @@ using System.Web.Http;
 
 namespace Tonal.WebService.Members.Controllers.Analysis.Education.Tone
 {
+    [System.Web.Http.Cors.EnableCors("*", "*", "*")]
     public class EducationSocialController : ApiController
     {
+        [System.Web.Http.Cors.EnableCors("*", "*", "*")]
         [Route("api/education/social")]
         public IHttpActionResult Get()
         {

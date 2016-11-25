@@ -4,11 +4,14 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace Tonal.WebService.Members.Controllers.Analysis.Education.Tone
 {
+    [System.Web.Http.Cors.EnableCors("*", "*", "*")]
     public class EducationLanguageController : ApiController
     {
+        [EnableCors("*", "*", "*")]
         [Route("api/education/language")]
         public IHttpActionResult Get()
         {

@@ -9,8 +9,12 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using Tonal.Model;
 
-namespace Tonal.WebService.Members.Controllers {
-    public class GenderOptionsController : ApiController {
+namespace Tonal.WebService.Members.Controllers
+{
+    [System.Web.Http.Cors.EnableCors("*", "*", "*")]
+    public class GenderOptionsController : ApiController
+    {
+        [System.Web.Http.Cors.EnableCors("*", "*", "*")]
         [ResponseType(typeof(Gender))]
         public IHttpActionResult Get() {
             IHttpActionResult actionResult;

@@ -8,8 +8,12 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using Tonal.Model;
 
-namespace Tonal.WebService.Members.Controllers {
-    public class ProfileController : ApiController {
+namespace Tonal.WebService.Members.Controllers
+{
+    [System.Web.Http.Cors.EnableCors("*", "*", "*")]
+    public class ProfileController : ApiController
+    {
+        [System.Web.Http.Cors.EnableCors("*", "*", "*")]
         [ResponseType(typeof(Member))]
         public IHttpActionResult Get(string email) {
             IHttpActionResult actionResult;
