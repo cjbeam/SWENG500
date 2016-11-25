@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnalysisDataService.cs" />
     <Compile Include="BaseDataService.cs" />
     <Compile Include="MemberFieldDataService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -9,10 +9,25 @@ namespace Tonal.WebService.Members.Controllers.Analysis.Gender.Tone
 {
     public class LanguageController : ApiController
     {
-        // GET api/<controller>
-        public IEnumerable<string> Get()
+        public IHttpActionResult Get()
         {
-            return new string[] { "value1", "value2" };
+            IHttpActionResult actionResult;
+
+            Tonal.Data.AnalysisDataService ds = new Tonal.Data.AnalysisDataService();
+            var dt = ds.GetAnalysis(Model.Category.language_tone.ToString(), (int)Model.Demographic.gender);
+
+            var jsonData = Newtonsoft.Json.JsonConvert.SerializeObject(dt);
+
+            if (jsonData != null)
+            {
+                actionResult = Ok(jsonData);
+            }
+            else
+            {
+                actionResult = StatusCode(HttpStatusCode.NotFound);
+            }
+
+            return actionResult;
         }
     }
 }

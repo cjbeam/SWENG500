@@ -12,4 +12,10 @@ namespace Tonal.Model
         public int GenderId { get; set; }
         public string GenderType { get; set; }
     }
+
+    public enum GenderEnum
+    {
+        Male = 1,
+        Female = 2
+    }
 }

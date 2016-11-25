@@ -516,7 +516,6 @@
       <DependentUpon>ToneAnalyzerAddIn.Designer.xml</DependentUpon>
     </Compile>
     <AppDesigner Include="Properties\" />
-    <None Include="ToneAnalyzer_2_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
