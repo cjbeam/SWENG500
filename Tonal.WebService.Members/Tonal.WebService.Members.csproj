@@ -107,6 +107,9 @@
   <ItemGroup>
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\BirthDateEmotionController.cs" />
+    <Compile Include="Controllers\BirthDateLanguage.cs" />
+    <Compile Include="Controllers\BirthDateSocialController.cs" />
     <Compile Include="Controllers\EducationEmotionController.cs" />
     <Compile Include="Controllers\EducationLanguageController.cs" />
     <Compile Include="Controllers\EducationSocialController.cs" />
