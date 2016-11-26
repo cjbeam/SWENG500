@@ -8,7 +8,7 @@ using System.Web.Http;
 namespace Tonal.WebService.Members.Controllers
 {
     [System.Web.Http.Cors.EnableCors("*", "*", "*")]
-    public class BirthDateLanguage : ApiController
+    public class BirthDateLanguageController : ApiController
     {
         [Route("api/birthdate/language")]
         public IHttpActionResult Get()
