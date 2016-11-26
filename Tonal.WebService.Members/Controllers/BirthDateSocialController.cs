@@ -10,7 +10,7 @@ namespace Tonal.WebService.Members.Controllers
     [System.Web.Http.Cors.EnableCors("*", "*", "*")]
     public class BirthDateSocialController : ApiController
     {
-        [Route("api/education/social")]
+        [Route("api/birthdate/social")]
         public IHttpActionResult Get()
         {
             IHttpActionResult actionResult;
