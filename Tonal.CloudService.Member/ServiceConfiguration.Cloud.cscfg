@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ServiceConfiguration serviceName="Tonal.CloudService.Member" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="4" osVersion="*" schemaVersion="2015-04.2.6">
+  <!--<Role name="WCFMemberServiceWebRole">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=tonalservice;AccountKey=qEn9OzKUoYy85p02i0FppZahes9Akeqn6bpESpjzMBkGrri3W+sJq01zejhP99VBU28KDzs5RhOSLZ2DrbRhJw==" />
+    </ConfigurationSettings>
+  </Role>-->
+  <Role name="WCF.WebRole.MemberService">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="UseDevelopmentStorage=true" />
+    </ConfigurationSettings>
+  </Role>
+</ServiceConfiguration>

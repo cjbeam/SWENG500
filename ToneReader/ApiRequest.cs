@@ -4,24 +4,19 @@ using System.Text;
 
 namespace ToneReader
 {
-    internal class ApiRequest
+    public static class ApiRequest
     {
-        internal string UserName { private get; set; }
-        internal string Password { private get; set; }
-        internal string ServiceAddress { private get; set; }
-        internal string ServiceVersion { private get; set; }
-        internal string ContentType { private get; set; }
 
-        internal string MakeRequest(string data)
+        public static string MakeRequest(string data)
         {
             using (var wb = new WebClient())
             {
-                wb.Credentials = new NetworkCredential(UserName, Password);
-                wb.Headers["Content-Type"] = ContentType;
-                var queryVariables = new NameValueCollection { ["version"] = ServiceVersion };
+                wb.Credentials = new NetworkCredential(ServiceConfiguration.UserName, ServiceConfiguration.Password);
+                wb.Headers["Content-Type"] = ServiceConfiguration.ContentType;
+                var queryVariables = new NameValueCollection { ["version"] = ServiceConfiguration.ServiceVersion };
                 wb.QueryString = queryVariables;
                 var text = data;
-                var response = wb.UploadData(ServiceAddress, "POST", Encoding.ASCII.GetBytes(text));
+                var response = wb.UploadData(ServiceConfiguration.ServiceAddress, "POST", Encoding.ASCII.GetBytes(text));
                 var responseJson = Encoding.ASCII.GetString(response);
                 return responseJson;
             }

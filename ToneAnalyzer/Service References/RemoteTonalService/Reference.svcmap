@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b882a7e3-5eb7-4a70-8e4b-e9934b1ffdb4" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://psutonalservice.cloudapp.net/TonalService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="TonalService.wsdl" MetadataType="Wsdl" ID="4dbd7ae6-b101-4e96-a4e0-47a78143f767" SourceId="1" SourceUrl="http://psutonalservice.cloudapp.net/TonalService.svc?wsdl" />
+    <MetadataFile FileName="TonalService.xsd" MetadataType="Schema" ID="cfe01047-0a9b-4f18-87da-73dfdb1b90d4" SourceId="1" SourceUrl="http://psutonalservice.cloudapp.net/TonalService.svc?xsd=xsd1" />
+    <MetadataFile FileName="TonalService1.xsd" MetadataType="Schema" ID="01aff624-a7a5-4e11-a6bb-d5496f8c586f" SourceId="1" SourceUrl="http://psutonalservice.cloudapp.net/TonalService.svc?xsd=xsd0" />
+    <MetadataFile FileName="TonalService.disco" MetadataType="Disco" ID="d1b0786f-8f42-43b0-8fa3-7d7aac264f8e" SourceId="1" SourceUrl="http://psutonalservice.cloudapp.net/TonalService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

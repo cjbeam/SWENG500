@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="WCF.WebRole.MemberService.MemberFieldService" CodeBehind="MemberFieldService.svc.cs" %>

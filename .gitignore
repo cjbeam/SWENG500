@@ -243,3 +243,5 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+/ModelingProject1
+/ToneAnalyzer/Common References/DevExpress/Framework

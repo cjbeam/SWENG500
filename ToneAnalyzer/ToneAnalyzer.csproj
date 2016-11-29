@@ -27,13 +27,38 @@
     <NoStandardLibraries>false</NoStandardLibraries>
     <RootNamespace>ToneAnalyzer</RootNamespace>
     <AssemblyName>ToneAnalyzer</AssemblyName>
-    <LoadBehavior>3</LoadBehavior>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <DefineConstants>VSTO40</DefineConstants>
+    <IsWebBootstrapper>False</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <BootstrapperComponentsLocation>HomeSite</BootstrapperComponentsLocation>
+    <PublishUrl>C:\Users\DARREN\Desktop\Install\</PublishUrl>
+    <InstallUrl />
+    <TargetCulture>en</TargetCulture>
+    <ApplicationVersion>2.0.0.11</ApplicationVersion>
+    <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>days</UpdateIntervalUnits>
+    <ProductName>ToneAnalyzer</ProductName>
+    <PublisherName />
+    <SupportUrl />
+    <FriendlyName>ToneAnalyzer</FriendlyName>
+    <OfficeApplicationDescription />
+    <LoadBehavior>3</LoadBehavior>
   </PropertyGroup>
   <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.VSTORuntime.4.0">
       <Visible>False</Visible>
       <ProductName>Microsoft Visual Studio 2010 Tools for Office Runtime %28x86 and x64%29</ProductName>
@@ -106,9 +131,220 @@
   -->
   <ItemGroup>
     <Reference Include="Accessibility" />
+    <Reference Include="DevExpress.BonusSkins.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Common References\DevExpress\Framework\DevExpress.BonusSkins.v16.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v16.1.Core, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Common References\DevExpress\Framework\DevExpress.Charts.v16.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.CodeParser.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Common References\DevExpress\Framework\DevExpress.CodeParser.v16.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Dashboard.v16.1.Core, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Common References\DevExpress\Framework\DevExpress.Dashboard.v16.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Dashboard.v16.1.Win, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Common References\DevExpress\Framework\DevExpress.Dashboard.v16.1.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Common References\DevExpress\Framework\DevExpress.Data.v16.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.DataAccess.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Common References\DevExpress\Framework\DevExpress.DataAccess.v16.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.DataAccess.v16.1.UI, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Common References\DevExpress\Framework\DevExpress.DataAccess.v16.1.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Diagram.v16.1.Core, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Common References\DevExpress\Framework\DevExpress.Diagram.v16.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Map.v16.1.Core, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Common References\DevExpress\Framework\DevExpress.Map.v16.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Office.v16.1.Core, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Common References\DevExpress\Framework\DevExpress.Office.v16.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Pdf.v16.1.Core, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Common References\DevExpress\Framework\DevExpress.Pdf.v16.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Pdf.v16.1.Drawing, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Common References\DevExpress\Framework\DevExpress.Pdf.v16.1.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.PivotGrid.v16.1.Core, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Common References\DevExpress\Framework\DevExpress.PivotGrid.v16.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v16.1.Core, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Common References\DevExpress\Framework\DevExpress.Printing.v16.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v16.1.Core, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Common References\DevExpress\Framework\DevExpress.RichEdit.v16.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Sparkline.v16.1.Core, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Common References\DevExpress\Framework\DevExpress.Sparkline.v16.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Common References\DevExpress\Framework\DevExpress.Utils.v16.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v16.1.UI, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Common References\DevExpress\Framework\DevExpress.Utils.v16.1.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Web.ASPxThemes.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Common References\DevExpress\Framework\DevExpress.Web.ASPxThemes.v16.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Web.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Common References\DevExpress\Framework\DevExpress.Web.v16.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Common References\DevExpress\Framework\DevExpress.Xpo.v16.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Common References\DevExpress\Framework\DevExpress.XtraBars.v16.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Common References\DevExpress\Framework\DevExpress.XtraCharts.v16.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v16.1.Extensions, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Common References\DevExpress\Framework\DevExpress.XtraCharts.v16.1.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v16.1.UI, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Common References\DevExpress\Framework\DevExpress.XtraCharts.v16.1.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v16.1.Web, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Common References\DevExpress\Framework\DevExpress.XtraCharts.v16.1.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v16.1.Wizard, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Common References\DevExpress\Framework\DevExpress.XtraCharts.v16.1.Wizard.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraDiagram.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Common References\DevExpress\Framework\DevExpress.XtraDiagram.v16.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Common References\DevExpress\Framework\DevExpress.XtraEditors.v16.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGauges.v16.1.Core, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Common References\DevExpress\Framework\DevExpress.XtraGauges.v16.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGauges.v16.1.Presets, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Common References\DevExpress\Framework\DevExpress.XtraGauges.v16.1.Presets.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGauges.v16.1.Win, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Common References\DevExpress\Framework\DevExpress.XtraGauges.v16.1.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Common References\DevExpress\Framework\DevExpress.XtraGrid.v16.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Common References\DevExpress\Framework\DevExpress.XtraLayout.v16.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraMap.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Common References\DevExpress\Framework\DevExpress.XtraMap.v16.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Common References\DevExpress\Framework\DevExpress.XtraNavBar.v16.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraPivotGrid.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Common References\DevExpress\Framework\DevExpress.XtraPivotGrid.v16.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Common References\DevExpress\Framework\DevExpress.XtraPrinting.v16.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Common References\DevExpress\Framework\DevExpress.XtraReports.v16.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v16.1.Extensions, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Common References\DevExpress\Framework\DevExpress.XtraReports.v16.1.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Common References\DevExpress\Framework\DevExpress.XtraRichEdit.v16.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v16.1.Extensions, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Common References\DevExpress\Framework\DevExpress.XtraRichEdit.v16.1.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Common References\DevExpress\Framework\DevExpress.XtraTreeList.v16.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraVerticalGrid.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Common References\DevExpress\Framework\DevExpress.XtraVerticalGrid.v16.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraWizard.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Common References\DevExpress\Framework\DevExpress.XtraWizard.v16.1.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.SQLite, Version=1.0.103.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.103\lib\net451\System.Data.SQLite.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.103.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.103\lib\net451\System.Data.SQLite.EF6.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.103.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.103\lib\net451\System.Data.SQLite.Linq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -155,6 +391,12 @@
     can be found.
   -->
   <ItemGroup>
+    <Compile Include="AnalysisProgressForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AnalysisProgressForm.Designer.cs">
+      <DependentUpon>AnalysisProgressForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AnalyzeRibbon.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -162,12 +404,43 @@
       <DependentUpon>AnalyzeRibbon.cs</DependentUpon>
     </Compile>
     <Compile Include="Configuration.cs" />
+    <Compile Include="DashboardDataAccess.cs" />
+    <Compile Include="DashboardProgressForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DashboardProgressForm.Designer.cs">
+      <DependentUpon>DashboardProgressForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmailAnalysis.cs" />
+    <Compile Include="Helper.cs" />
+    <Compile Include="MessageDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageDashboard.Designer.cs">
+      <DependentUpon>MessageDashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ConfigurationRibbon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ConfigurationRibbon.Designer.cs">
+      <DependentUpon>ConfigurationRibbon.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AnalysisProgressForm.resx">
+      <DependentUpon>AnalysisProgressForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AnalyzeRibbon.resx">
       <DependentUpon>AnalyzeRibbon.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DashboardProgressForm.resx">
+      <DependentUpon>DashboardProgressForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessageDashboard.resx">
+      <DependentUpon>MessageDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -176,7 +449,24 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ResultGauge.resx">
+      <DependentUpon>ResultGauge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SentenceGauge.resx">
+      <DependentUpon>SentenceGauge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SentenceResults.resx">
+      <DependentUpon>SentenceResults.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConfigurationRibbon.resx">
+      <DependentUpon>ConfigurationRibbon.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -184,10 +474,41 @@
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ResultGauge.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ResultGauge.Designer.cs">
+      <DependentUpon>ResultGauge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SentenceGauge.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SentenceGauge.Designer.cs">
+      <DependentUpon>SentenceGauge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SentenceResults.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SentenceResults.Designer.cs">
+      <DependentUpon>SentenceResults.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\RemoteTonalService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="ToneAnalyzerAddIn.cs">
       <SubType>Code</SubType>
     </Compile>
+    <None Include="Service References\RemoteTonalService\TonalService.wsdl" />
+    <None Include="Service References\RemoteTonalService\TonalService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RemoteTonalService\TonalService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="ToneAnalyzerAddIn.Designer.xml">
       <DependentUpon>ToneAnalyzerAddIn.cs</DependentUpon>
     </None>
@@ -195,13 +516,33 @@
       <DependentUpon>ToneAnalyzerAddIn.Designer.xml</DependentUpon>
     </Compile>
     <AppDesigner Include="Properties\" />
-    <None Include="ToneAnalyzer_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ToneReader\ToneReader.csproj">
-      <Project>{ba0ec2ee-9389-40a5-b0af-8f414b0dec98}</Project>
-      <Name>ToneReader</Name>
-    </ProjectReference>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EmailDashboard.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x64\SQLite.Interop.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x86\SQLite.Interop.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Service References\RemoteTonalService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\RemoteTonalService\configuration.svcinfo" />
+    <None Include="Service References\RemoteTonalService\configuration91.svcinfo" />
+    <None Include="Service References\RemoteTonalService\TonalService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\RemoteTonalService\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -211,10 +552,17 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>ToneAnalyzer_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>ToneAnalyzer_2_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>68D8E6351D9BCF39B2186939510A80733CC22134</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>266E6A933456E6A083080848B68F0AD51CDCC3BD</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <!-- Include the build rules for a C# project. -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
@@ -225,10 +573,17 @@
     <VisualStudio>
       <FlavorProperties GUID="{BAA0C2D2-18E2-41B9-852F-F413020CAA33}">
         <ProjectProperties HostName="Outlook" HostPackage="{29A7B9D7-A7F1-4328-8EF0-6B2D1A56B2C1}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="Outlook" Language="cs" TemplatesPath="" DebugInfoExeName="#Software\Microsoft\Office\16.0\Outlook\InstallRoot\Path#outlook.exe" AddItemTemplatesGuid="{A58A78EB-1C92-4DDD-80CF-E8BD872ABFC4}" />
-        <Host Name="Outlook" GeneratedCodeNamespace="ToneAnalyzer" IconIndex="0">
-          <HostItem Name="ThisAddIn" Code="ToneAnalyzerAddIn.cs" CanonicalName="AddIn" CanActivate="false" IconIndex="1" Blueprint="ToneAnalyzerAddIn.Designer.xml" GeneratedCode="ToneAnalyzerAddIn.Designer.cs" />
+        <Host Name="Outlook" GeneratedCodeNamespace="ToneAnalyzer" PublishedHash="69C324AB27932AA2FBF2B7EA72250886FF164DE6" IconIndex="0">
+          <HostItem Name="ThisAddIn" Code="ToneAnalyzerAddIn.cs" CanonicalName="AddIn" PublishedHash="B103309A39760F93B091D2B511BB3F72CDC55CEF" CanActivate="false" IconIndex="1" Blueprint="ToneAnalyzerAddIn.Designer.xml" GeneratedCode="ToneAnalyzerAddIn.Designer.cs" />
         </Host>
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.103\build\net451\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.103\build\net451\System.Data.SQLite.Core.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.103\build\net451\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.103\build\net451\System.Data.SQLite.Core.targets'))" />
+  </Target>
 </Project>
