@@ -3,10 +3,10 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tonal.WebService.Members.Tests {
     [TestClass]
-    public class UnitTestEducationLevels {
+    public class UnitTestGenderOptions {
         [TestMethod]
-        public void TestGetEducationLevels() {
-            var controller = new Tonal.WebService.Members.Controllers.EducationLevelsController();
+        public void TestGetGenderOptions() {
+            var controller = new Tonal.WebService.Members.Controllers.GenderOptionsController();
             var result = controller.Get();
 
             Assert.IsNotNull(result);

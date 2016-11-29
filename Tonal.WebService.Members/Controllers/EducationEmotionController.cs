@@ -8,7 +8,7 @@ using System.Web.Http;
 using System.Web.Http.Cors;
 using Tonal.Model;
 
-namespace Tonal.WebService.Members.Controllers.Analysis.Education.Tone
+namespace Tonal.WebService.Members.Controllers
 {
     [System.Web.Http.Cors.EnableCors("*", "*", "*")]
     public class EducationEmotionController : ApiController

@@ -5,7 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace Tonal.WebService.Members.Controllers.Analysis.Gender.Tone
+namespace Tonal.WebService.Members.Controllers
 {
     [System.Web.Http.Cors.EnableCors("*", "*", "*")]
     public class GenderLanguageController : ApiController
